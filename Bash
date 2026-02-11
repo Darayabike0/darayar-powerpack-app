@@ -1,0 +1,14 @@
+# เริ่มต้นใช้งาน Git ในโปรเจกต์
+git init
+
+# เพิ่มไฟล์ทั้งหมดเข้าสู่การเตรียมส่ง
+git add .
+
+# บันทึกสถานะพร้อมข้อความอธิบาย
+git commit -m "Initial commit: Add product list and contact schema"
+
+# เชื่อมต่อไปยัง GitHub (นำ URL มาจากที่สร้างไว้ในข้อ 1)
+git remote add origin https://github.com/ชื่อของคุณ/darayar-powerpack-app.git
+
+# ส่งโค้ดขึ้นไปบนเมนหลัก
+git push -u origin main
