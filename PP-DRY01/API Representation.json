@@ -1,0 +1,36 @@
+{
+  "lot_number": "LOT-20251024-02",
+  "document": "COA-2S1P-20251024.md",
+  "product_name": "PowerPack 2S1P 2000mAh",
+  "model": "Plack-2S1P-2000mAh",
+  "sku": "20251024-02",
+  "manufacture_date": "2025-10-24",
+  "launch_date": "2025-11-02",
+  "manufacturer": "Daraya Bicycle",
+  "stock_status": "Made to Order",
+  "quantity": 800,
+  "specifications": {
+    "cell_type": "ICR18650",
+    "configuration": "2S1P",
+    "capacity_mAh": 2000,
+    "nominal_voltage_V": 7.4,
+    "charge_voltage_V": 8.4,
+    "weight_kg": 1,
+    "dimensions_mm": "38x65",
+    "protection": ["Overcharge", "Overload", "Short Circuit"],
+    "certifications": ["CE", "RoHS", "UN38.3"],
+    "price_THB": 350
+  },
+  "applications": [
+    "UPS IoT",
+    "e-Mobility Boost",
+    "Stage Lighting",
+    "Flashlights",
+    "LCR Meters",
+    "DIY Projects"
+  ],
+  "inspector": {
+    "name": "Mr. Waranyu",
+    "position": "Quality Control Engineer"
+  }
+}

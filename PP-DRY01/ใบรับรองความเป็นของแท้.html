@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate of Authenticity - PP-DRY01</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- QR Code Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .cert-border {
+            border: 10px double #1e3a8a;
+        }
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 8rem;
+            opacity: 0.03;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+        .status-active {
+            color: #059669;
+            background-color: #ecfdf5;
+            border: 1px solid #10b981;
+        }
+        @media print {
+            .no-print { display: none; }
+            body { background-color: white; }
+            .cert-container { box-shadow: none; border-width: 5px; }
+        }
+    </style>
+</head>
+<body class="p-4 md:p-10 flex flex-col items-center">
+
+    <div class="cert-container relative bg-white p-8 md:p-16 max-w-4xl w-full shadow-2xl cert-border rounded-lg overflow-hidden">
+        <div class="watermark font-bold uppercase text-blue-900">Official Product</div>
+        
+        <!-- Header -->
+        <div class="text-center mb-10">
+            <h1 class="text-4xl md:text-5xl font-bold text-blue-900 mb-2">ใบรับรองความเป็นของแท้</h1>
+            <p class="text-xl text-gray-600 tracking-widest uppercase">Certificate of Authenticity</p>
+            <div class="w-32 h-1 bg-blue-900 mx-auto mt-4"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="space-y-8 text-center relative z-10">
+            <!-- Dynamic Status Badge -->
+            <div id="status-badge" class="inline-flex items-center px-4 py-1 rounded-full text-sm font-bold animate-pulse mb-4 bg-gray-100 text-gray-500 border border-gray-300">
+                <span class="mr-2">●</span> Checking Status...
+            </div>
+
+            <p class="text-lg text-gray-700">
+                เอกสารนี้ขอรับรองว่าผลิตภัณฑ์ที่ระบุไว้ด้านล่างนี้เป็นผลิตภัณฑ์ของแท้ <br>
+                ที่ผ่านการตรวจสอบมาตรฐานความปลอดภัยและคุณภาพอย่างครบถ้วนจากผู้ผลิต
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left bg-blue-50 p-6 rounded-lg border border-blue-100 shadow-inner">
+                <div>
+                    <label class="block text-sm font-semibold text-blue-800 uppercase">ชื่อรุ่น (Model Name)</label>
+                    <p class="text-xl font-bold text-gray-900">แบตเตอรี่ลิเธียมไอออน 7.4V 2000mAh</p>
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-blue-800 uppercase">หมายเลขซีเรียล (Serial Number)</label>
+                    <p class="text-xl font-mono font-bold text-gray-900">PP-DRY01</p>
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-blue-800 uppercase">แรงดันไฟฟ้า (Voltage)</label>
+                    <p class="text-lg font-semibold text-gray-900">7.4V</p>
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-blue-800 uppercase">ความจุ (Capacity)</label>
+                    <p class="text-lg font-semibold text-gray-900">2000mAh / 14.8Wh</p>
+                </div>
+            </div>
+
+            <!-- Validation Section -->
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8 py-6 border-y border-gray-100">
+                <div class="text-center">
+                    <div id="qrcode" class="bg-white p-2 border border-gray-200 inline-block shadow-sm"></div>
+                    <p class="text-xs text-gray-500 mt-2 font-semibold">Scan to Verify Status</p>
+                </div>
+                <div class="text-left max-w-xs">
+                    <h3 class="font-bold text-blue-900 mb-1">การตรวจสอบสถานะ</h3>
+                    <p class="text-sm text-gray-600">
+                        คุณสามารถตรวจสอบข้อมูลทางเทคนิคและการรับรองย้อนหลังได้ผ่านลิงก์อ้างอิงบน GitHub Issue #28
+                    </p>
+                    <a href="https://github.com/Darayabike0/main/issues/28" target="_blank" class="text-blue-600 text-xs break-all hover:underline">
+                        https://github.com/Darayabike0/main/issues/28
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-12 flex flex-col md:flex-row justify-between items-end border-t border-gray-200 pt-8">
+            <div class="text-left space-y-2 mb-6 md:mb-0">
+                <div class="flex items-center space-x-2">
+                    <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <span class="font-bold text-gray-800">Verified Quality Control</span>
+                </div>
+                <p class="text-xs text-gray-400">Date of Issue: February 8, 2026</p>
+                <p class="text-[10px] text-gray-300">Reference: DARAYABIKE-QC-28</p>
+            </div>
+
+            <div class="text-center w-full md:w-auto">
+                <div class="border-b-2 border-gray-400 w-48 mx-auto mb-2 h-12 flex items-center justify-center">
+                    <span class="text-gray-300 font-serif italic text-2xl uppercase opacity-50">Darayabike</span>
+                </div>
+                <p class="text-sm font-bold text-gray-800 uppercase tracking-widest">Authorized Officer</p>
+            </div>
+        </div>
+
+        <!-- Security Badge -->
+        <div class="absolute top-4 right-4 bg-blue-900 text-white p-3 rounded-full shadow-lg transform rotate-12 border-4 border-blue-200 hidden md:block">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+        </div>
+    </div>
+
+    <div class="no-print flex gap-4 mt-8">
+        <button onclick="window.print()" class="bg-blue-900 text-white px-8 py-3 rounded-full hover:bg-blue-800 transition shadow-lg font-bold flex items-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+            พิมพ์ใบรับรอง
+        </button>
+    </div>
+
+    <script>
+        // ฟังก์ชันจำลองการตรวจสอบสถานะจากระบบ KV
+        async function checkProductStatus() {
+            const statusBadge = document.getElementById('status-badge');
+            
+            // จำลองความล่าช้าของเครือข่ายในการดึงข้อมูลจาก KV
+            await new Promise(resolve => setTimeout(resolve, 1500));
+            
+            // จำลองข้อมูลที่ได้จาก KV: get('PP-DRY01_STATUS')
+            const mockKVValue = 'ACTIVE'; 
+            
+            if (mockKVValue === 'ACTIVE') {
+                statusBadge.innerHTML = '<span class="mr-2">●</span> Verified & Active';
+                statusBadge.className = 'inline-flex items-center px-4 py-1 rounded-full text-sm font-bold mb-4 status-active';
+            }
+        }
+
+        window.onload = function() {
+            // สร้าง QR Code
+            new QRCode(document.getElementById("qrcode"), {
+                text: "https://github.com/Darayabike0/main/issues/28",
+                width: 100,
+                height: 100,
+                colorDark : "#1e3a8a",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.H
+            });
+
+            // ตรวจสอบสถานะผลิตภัณฑ์
+            checkProductStatus();
+        }
+    </script>
+</body>
+</html>

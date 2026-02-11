@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COA - PowerPack18650 (P18650-1)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background-color: #f8fafc;
+        }
+        .cert-border {
+            border: 12px double #0f172a;
+            position: relative;
+        }
+        .cert-border::before {
+            content: "";
+            position: absolute;
+            top: -6px; left: -6px; right: -6px; bottom: -6px;
+            border: 2px solid #334155;
+            pointer-events: none;
+        }
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-30deg);
+            font-size: 6rem;
+            opacity: 0.04;
+            font-weight: 800;
+            pointer-events: none;
+            white-space: nowrap;
+            color: #0f172a;
+        }
+        .status-valid {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+        }
+        @media print {
+            .no-print { display: none; }
+            body { background-color: white; padding: 0; }
+            .cert-container { box-shadow: none; border-width: 8px; margin: 0; }
+        }
+    </style>
+</head>
+<body class="p-4 md:p-12 flex flex-col items-center">
+
+    <div class="cert-container relative bg-white p-8 md:p-16 max-w-4xl w-full shadow-2xl cert-border rounded-sm overflow-hidden border-slate-900">
+        <div class="watermark uppercase">DALAYAR ORIGINAL</div>
+        
+        <!-- Header Section -->
+        <div class="flex flex-col md:flex-row justify-between items-start mb-12 border-b-2 border-slate-100 pb-8 relative z-10">
+            <div class="text-left">
+                <h2 class="text-2xl font-bold text-slate-800 tracking-tight">DALAYAR</h2>
+                <p class="text-xs text-slate-500 uppercase tracking-[0.2em]">Energy Solutions Provider</p>
+            </div>
+            <div class="text-center mt-6 md:mt-0 w-full md:w-auto">
+                <h1 class="text-3xl md:text-4xl font-black text-slate-900 mb-1">CERTIFICATE OF AUTHENTICITY</h1>
+                <p class="text-slate-500 text-sm tracking-widest uppercase italic">ใบรับรองผลิตภัณฑ์ของแท้และมาตรฐานความปลอดภัย</p>
+            </div>
+            <div class="hidden md:block text-right">
+                <p class="text-xs font-bold text-slate-400 uppercase">Document ID</p>
+                <p class="text-sm font-mono font-bold text-slate-700">#DL-P186501-2025</p>
+            </div>
+        </div>
+
+        <!-- Main Body -->
+        <div class="space-y-8 relative z-10">
+            <!-- Status Badge -->
+            <div class="flex justify-center">
+                <div id="status-badge" class="px-6 py-2 rounded-full text-white font-bold text-sm flex items-center gap-2 status-valid">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    VERIFIED & GENUINE PRODUCT
+                </div>
+            </div>
+
+            <div class="text-center">
+                <p class="text-lg text-slate-600 leading-relaxed">
+                    ขอรับรองว่าชุดแบตเตอรี่ลิเธียมไอออนรุ่นที่ระบุด้านล่าง ผลิตโดย <span class="font-bold text-slate-900">DALAYAR</span><br>
+                    ได้รับการตรวจสอบมาตรฐานการจัดเรียงเซลล์และระบบป้องกันวงจร (PCM/PCB) อย่างถูกต้องสมบูรณ์
+                </p>
+            </div>
+
+            <!-- Product Details Table -->
+            <div class="bg-slate-50 rounded-xl p-1 shadow-inner border border-slate-200">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-0 text-sm">
+                    <div class="p-4 border-r border-b border-slate-200">
+                        <span class="block text-[10px] font-bold text-slate-400 uppercase">Model / SKU</span>
+                        <span class="text-lg font-bold text-slate-800">P18650-1</span>
+                    </div>
+                    <div class="p-4 border-r border-b border-slate-200">
+                        <span class="block text-[10px] font-bold text-slate-400 uppercase">Voltage</span>
+                        <span class="text-lg font-bold text-slate-800">12V (3S3P)</span>
+                    </div>
+                    <div class="p-4 border-r border-b border-slate-200">
+                        <span class="block text-[10px] font-bold text-slate-400 uppercase">Capacity</span>
+                        <span class="text-lg font-bold text-slate-800">5Ah</span>
+                    </div>
+                    <div class="p-4 border-b border-slate-200">
+                        <span class="block text-[10px] font-bold text-slate-400 uppercase">Weight</span>
+                        <span class="text-lg font-bold text-slate-800">1.2 Kg</span>
+                    </div>
+                    <div class="p-4 border-r border-slate-200">
+                        <span class="block text-[10px] font-bold text-slate-400 uppercase">Cell Type</span>
+                        <span class="text-sm font-bold text-slate-700">ICR18650 (Lithium-ion)</span>
+                    </div>
+                    <div class="p-4 border-r border-slate-200">
+                        <span class="block text-[10px] font-bold text-slate-400 uppercase">Dimensions</span>
+                        <span class="text-sm font-bold text-slate-700">150 x 65 x 90 mm</span>
+                    </div>
+                    <div class="p-4 border-r border-slate-200">
+                        <span class="block text-[10px] font-bold text-slate-400 uppercase">Protection</span>
+                        <span class="text-sm font-bold text-slate-700 text-green-600">Dual PCB/PCM System</span>
+                    </div>
+                    <div class="p-4">
+                        <span class="block text-[10px] font-bold text-slate-400 uppercase">Life Cycle</span>
+                        <span class="text-sm font-bold text-slate-700">> 800 Cycles</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="flex items-start gap-3 p-3 border border-slate-100 rounded-lg">
+                    <div class="bg-blue-100 p-2 rounded text-blue-700 font-bold">✓</div>
+                    <p class="text-xs text-slate-600 font-medium">ผ่านการทดสอบชาร์จเกิน และลัดวงจร</p>
+                </div>
+                <div class="flex items-start gap-3 p-3 border border-slate-100 rounded-lg">
+                    <div class="bg-blue-100 p-2 rounded text-blue-700 font-bold">✓</div>
+                    <p class="text-xs text-slate-600 font-medium">จ่ายพลังงานเสถียรสำหรับ UPS/Solar</p>
+                </div>
+                <div class="flex items-start gap-3 p-3 border border-slate-100 rounded-lg">
+                    <div class="bg-blue-100 p-2 rounded text-blue-700 font-bold">✓</div>
+                    <p class="text-xs text-slate-600 font-medium">รองรับการตรวจสอบผ่าน Line OA</p>
+                </div>
+            </div>
+
+            <!-- Validation Section -->
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8 py-8 px-6 bg-slate-900 rounded-xl text-white">
+                <div class="flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
+                    <div id="qrcode" class="bg-white p-2 rounded-lg"></div>
+                    <div>
+                        <h4 class="font-bold text-blue-400 mb-1">สแกนตรวจสอบข้อมูลผลิตภัณฑ์</h4>
+                        <p class="text-xs text-slate-400 max-w-[200px]">
+                            ลิงก์ไปยังหน้ารายละเอียดเทคนิคและประวัติการตรวจสอบในระบบ CRM
+                        </p>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <p class="text-[10px] uppercase text-slate-500 font-bold tracking-widest mb-1">Authorized Verification</p>
+                    <div class="text-2xl font-black italic tracking-tighter text-blue-200">DALAYAR GROUP</div>
+                    <p class="text-[10px] text-slate-400">Authenticity Guaranteed Since 2025</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-12 flex justify-between items-end text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+            <div>Issue Date: 2025-10-31</div>
+            <div class="text-center">
+                <p class="mb-2">Official Seal</p>
+                <div class="w-16 h-16 border-4 border-slate-200 rounded-full flex items-center justify-center opacity-30">
+                    <span class="text-[8px]">QC PASS</span>
+                </div>
+            </div>
+            <div>Serial: PP-DRY-01-18650</div>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="no-print flex gap-4 mt-8">
+        <button onclick="window.print()" class="bg-slate-900 text-white px-10 py-4 rounded-full hover:bg-slate-800 transition shadow-xl font-bold flex items-center gap-3">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+            พิมพ์ใบรับรอง COA
+        </button>
+        <a href="https://exultant-limit-4af.notion.site/ebd/29ac8813902f8068bb06cb4c04d04eef" target="_blank" class="bg-white border-2 border-slate-900 text-slate-900 px-8 py-4 rounded-full hover:bg-slate-50 transition shadow-md font-bold">
+            ดูรายละเอียดใน Notion
+        </a>
+    </div>
+
+    <script>
+        window.onload = function() {
+            // สร้าง QR Code ลิงก์ไปยังรายละเอียดผลิตภัณฑ์ใน Notion หรือระบบตรวจสอบ
+            new QRCode(document.getElementById("qrcode"), {
+                text: "https://exultant-limit-4af.notion.site/ebd/29ac8813902f8068bb06cb4c04d04eef",
+                width: 90,
+                height: 90,
+                colorDark : "#0f172a",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        }
+    </script>
+</body>
+</html>

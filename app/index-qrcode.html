@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POWERPLACK - DALAYAR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #60A5FA, #A78BFA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-bg {
+            background-image: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+        }
+        .battery-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        @media print {
+            .no-print { display: none; }
+            .print-only { display: block !important; }
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-white antialiased selection:bg-blue-500 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800 no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold tracking-tighter text-white">POWER<span class="text-blue-500">PLACK</span></span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="hover:text-blue-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="#qrcode" class="hover:text-blue-400 transition-colors px-3 py-2 rounded-md text-sm font-medium text-blue-400 font-bold">QR Generator</a>
+                        <a href="#about" class="hover:text-blue-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">About</a>
+                        <a href="#services" class="hover:text-blue-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">Services</a>
+                        <a href="#contact" class="bg-blue-600 hover:bg-blue-700 transition-colors px-4 py-2 rounded-full text-sm font-medium">Contact Us</a>
+                    </div>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block hover:bg-slate-700 px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#qrcode" class="block hover:bg-slate-700 px-3 py-2 rounded-md text-base font-medium text-blue-400">QR Generator</a>
+                <a href="#about" class="block hover:bg-slate-700 px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="#services" class="block hover:bg-slate-700 px-3 py-2 rounded-md text-base font-medium">Services</a>
+                <a href="#contact" class="block hover:bg-slate-700 px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center pt-16 relative overflow-hidden no-print">
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12 z-10">
+            <div class="flex-1 text-center md:text-left">
+                <h2 class="text-blue-400 font-semibold tracking-wide uppercase text-sm mb-4">The New Standard of Power</h2>
+                <h1 class="text-6xl md:text-8xl font-bold tracking-tight mb-6">
+                    <span class="gradient-text">DALAYAR</span>
+                </h1>
+                <p class="mt-4 max-w-2xl text-xl text-slate-400">
+                    High-quality Lithium-ion battery solutions by POWERPLACK. Reliable, safe, and engineered for the next generation of energy storage.
+                </p>
+                <div class="mt-10 flex flex-wrap justify-center md:justify-start gap-4">
+                    <a href="#qrcode" class="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-semibold transition-all hover:scale-105 shadow-lg shadow-blue-500/25">
+                        Generate QR Label
+                    </a>
+                    <a href="#about" class="px-8 py-3 border border-slate-600 hover:border-slate-400 hover:bg-slate-800/50 rounded-full font-semibold transition-all">
+                        View Specifications
+                    </a>
+                </div>
+            </div>
+            <div class="flex-1 flex justify-center items-center">
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-blue-500/20 rounded-full blur-3xl group-hover:bg-blue-500/40 transition-all duration-700"></div>
+                    <img src="https://cdnus.globalso.com/batterypkcell/14.8V-4S1P-2200mAh-ICR18650-Battery-Pack1.png" alt="Dalayar Battery Pack" class="relative w-80 md:w-[450px] h-auto object-contain battery-float drop-shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QR Generator Section -->
+    <section id="qrcode" class="py-24 bg-slate-900 border-t border-slate-800 no-print">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="mb-12">
+                <h2 class="text-4xl font-bold mb-4">QR Code <span class="text-blue-500">Generator</span></h2>
+                <p class="text-slate-400">สร้างรหัส QR สำหรับติดบนผลิตภัณฑ์ Dalayar เพื่อการติดตามข้อมูลที่รวดเร็ว</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start bg-slate-800/40 p-8 rounded-3xl border border-slate-700">
+                <!-- Input Form -->
+                <div class="space-y-6 text-left">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-400 mb-2">ชื่อผลิตภัณฑ์ (Model Name)</label>
+                        <input id="qr-name" type="text" placeholder="เช่น Dalayar Core X1" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-400 mb-2">รหัส SKU / Serial Number</label>
+                        <input id="qr-sku" type="text" placeholder="เช่น PP-DLY-001" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all font-mono">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-400 mb-2">ความจุและสเปก (Specs)</label>
+                        <input id="qr-spec" type="text" placeholder="เช่น 14.8V / 2200mAh" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all">
+                    </div>
+                    <button onclick="generateQR()" class="w-full py-4 bg-blue-600 hover:bg-blue-700 rounded-xl font-bold flex items-center justify-center transition-all group shadow-lg shadow-blue-600/20">
+                        <i data-lucide="refresh-cw" class="w-5 h-5 mr-2 group-hover:rotate-180 transition-transform duration-500"></i>
+                        สร้างรหัส QR
+                    </button>
+                </div>
+
+                <!-- Preview Area -->
+                <div id="qr-preview-card" class="bg-white rounded-2xl p-6 text-slate-900 flex flex-col items-center justify-center min-h-[400px]">
+                    <div id="qr-container" class="mb-6">
+                        <div class="w-48 h-48 bg-slate-100 rounded-lg flex items-center justify-center text-slate-400 italic">
+                            รอการป้อนข้อมูล...
+                        </div>
+                    </div>
+                    <div id="qr-info" class="text-center hidden w-full">
+                        <h4 id="display-name" class="text-xl font-bold mb-1">Product Name</h4>
+                        <p id="display-sku" class="text-sm font-mono text-slate-500 mb-4 tracking-wider">SKU-0000</p>
+                        <div class="flex justify-center space-x-3 mt-6 no-print">
+                            <button onclick="window.print()" class="px-4 py-2 bg-slate-900 text-white rounded-lg text-sm font-semibold flex items-center hover:bg-slate-800 transition-colors">
+                                <i data-lucide="printer" class="w-4 h-4 mr-2"></i> พิมพ์เลเบล
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Print Only Section -->
+    <div class="hidden print-only fixed inset-0 bg-white text-black p-10 flex flex-col items-center justify-center">
+        <div class="border-4 border-black p-8 text-center max-w-sm">
+            <div id="print-qr-container" class="mb-4 inline-block"></div>
+            <h1 id="print-name" class="text-2xl font-black uppercase mb-1"></h1>
+            <p id="print-sku" class="text-lg font-mono mb-2"></p>
+            <p id="print-spec" class="text-sm border-t border-black pt-2 font-bold"></p>
+            <div class="mt-4 text-[10px] text-gray-500 uppercase tracking-widest">PowerPlack • Dalayar Technology</div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <section id="about" class="py-24 bg-slate-900 no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center gap-12 mb-20">
+                <div class="flex-1">
+                    <img src="https://cdnus.globalso.com/batterypkcell/14.8V-4S1P-2200mAh-ICR18650-Battery-Pack1.png" alt="Battery Spec" class="w-full max-w-md mx-auto drop-shadow-xl hover:scale-105 transition-transform">
+                </div>
+                <div class="flex-1">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Designed for <span class="text-blue-500">Endurance</span></h2>
+                    <p class="text-slate-400 text-lg mb-6">แบตเตอรี่ Dalayar ทุกแพ็คได้รับการออกแบบโดยคำนึงถึงความปลอดภัยและประสิทธิภาพสูงสุด (ICR18650) รองรับการใช้งานหลากหลายรูปแบบ</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 bg-slate-800 rounded-xl">
+                            <div class="text-blue-400 font-bold text-xl">14.8V</div>
+                            <div class="text-slate-500 text-sm">Nominal Voltage</div>
+                        </div>
+                        <div class="p-4 bg-slate-800 rounded-xl">
+                            <div class="text-blue-400 font-bold text-xl">2200mAh</div>
+                            <div class="text-slate-500 text-sm">Capacity</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 bg-slate-800/50 rounded-2xl border border-slate-700 hover:border-blue-500/50 transition-all group">
+                    <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-500/20 transition-colors">
+                        <i data-lucide="zap" class="text-blue-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Stable Power</h3>
+                    <p class="text-slate-400">จ่ายไฟสม่ำเสมอด้วยระบบ BMS อัจฉริยะที่ติดตั้งมาภายในทุกก้อน</p>
+                </div>
+
+                <div class="p-8 bg-slate-800/50 rounded-2xl border border-slate-700 hover:border-purple-500/50 transition-all group">
+                    <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-purple-500/20 transition-colors">
+                        <i data-lucide="shield" class="text-purple-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Multi-Layer Protection</h3>
+                    <p class="text-slate-400">ระบบป้องกันการลัดวงจร การจ่ายไฟเกิน และความร้อนสะสม</p>
+                </div>
+
+                <div class="p-8 bg-slate-800/50 rounded-2xl border border-slate-700 hover:border-pink-500/50 transition-all group">
+                    <div class="w-12 h-12 bg-pink-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-pink-500/20 transition-colors">
+                        <i data-lucide="package" class="text-pink-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Compact Design</h3>
+                    <p class="text-slate-400">ขนาดกะทัดรัด น้ำหนักเบา เหมาะสำหรับอุปกรณ์พกพาและหุ่นยนต์</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-slate-800 relative no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Innovative Solutions for <br /><span class="text-blue-500">Modern Problems</span></h2>
+                    <p class="text-slate-400 mb-8 text-lg">
+                        ที่ POWERPLACK เราไม่ได้เพียงแค่ผลิตแบตเตอรี่ แต่เราสร้างสรรค์ระบบนิเวศน์พลังงานที่ยั่งยืนผ่านเทคโนโลยี Dalayar ที่ชาญฉลาดและปรับขนาดได้ตามความต้องการ
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center space-x-3 text-slate-300">
+                            <i data-lucide="check-circle" class="text-green-400 w-5 h-5"></i>
+                            <span>Custom Battery Pack Assembly</span>
+                        </li>
+                        <li class="flex items-center space-x-3 text-slate-300">
+                            <i data-lucide="check-circle" class="text-green-400 w-5 h-5"></i>
+                            <span>BMS Programming & Tuning</span>
+                        </li>
+                        <li class="flex items-center space-x-3 text-slate-300">
+                            <i data-lucide="check-circle" class="text-green-400 w-5 h-5"></i>
+                            <span>Rapid Prototyping</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-blue-600 to-purple-600 rounded-2xl blur-2xl opacity-30"></div>
+                    <div class="relative bg-slate-900 border border-slate-700 p-8 rounded-2xl">
+                        <div class="flex space-x-2 mb-4">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+                        <div class="space-y-2 font-mono text-sm">
+                            <div class="text-slate-400">// Initialize Dalayar Core</div>
+                            <div class="text-purple-400">const <span class="text-blue-400">powerplack</span> = <span class="text-yellow-400">new</span> Future();</div>
+                            <div class="text-purple-400">await <span class="text-blue-400">powerplack</span>.init({</div>
+                            <div class="pl-4 text-green-400">type: <span class="text-orange-400">'14.8V-Li-ion'</span>,</div>
+                            <div class="pl-4 text-green-400">safety: <span class="text-orange-400">'certified'</span></div>
+                            <div class="text-purple-400">});</div>
+                            <div class="text-slate-500 animate-pulse">_</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-slate-950 py-12 border-t border-slate-800 no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-1 md:col-span-2">
+                    <span class="text-2xl font-bold tracking-tighter text-white mb-4 block">POWER<span class="text-blue-500">PLACK</span></span>
+                    <p class="text-slate-400 max-w-xs">
+                        Leading the transition to portable clean energy with Dalayar technology.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Home</a></li>
+                        <li><a href="#qrcode" class="hover:text-blue-400 transition-colors">QR Generator</a></li>
+                        <li><a href="#about" class="hover:text-blue-400 transition-colors">Specifications</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li>info@powerplack.com</li>
+                        <li>Support: +66 2 XXX XXXX</li>
+                        <li>Bangkok, Thailand</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-slate-500 text-sm">&copy; 2024 POWERPLACK. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="text-slate-400 hover:text-white transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-white transition-colors"><i data-lucide="github" class="w-5 h-5"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-white transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        function generateQR() {
+            const name = document.getElementById('qr-name').value || 'Dalayar Battery Pack';
+            const sku = document.getElementById('qr-sku').value || 'SKU-000000';
+            const spec = document.getElementById('qr-spec').value || '14.8V / 2200mAh';
+
+            const qrData = `Product: ${name}\nSKU: ${sku}\nSpec: ${spec}`;
+            const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(qrData)}`;
+
+            const qrImg = document.createElement('img');
+            qrImg.src = qrUrl;
+            qrImg.className = "w-56 h-56 shadow-md border-4 border-slate-100 rounded-lg";
+            
+            const container = document.getElementById('qr-container');
+            container.innerHTML = '';
+            container.appendChild(qrImg);
+
+            document.getElementById('display-name').textContent = name;
+            document.getElementById('display-sku').textContent = sku;
+            document.getElementById('qr-info').classList.remove('hidden');
+
+            const printQrImg = qrImg.cloneNode();
+            document.getElementById('print-qr-container').innerHTML = '';
+            document.getElementById('print-qr-container').appendChild(printQrImg);
+            document.getElementById('print-name').textContent = name;
+            document.getElementById('print-sku').textContent = sku;
+            document.getElementById('print-spec').textContent = spec;
+
+            lucide.createIcons();
+        }
+    </script>
+</body>
+</html>

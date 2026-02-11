@@ -1,0 +1,8 @@
+name = "darayar-backend"
+main = "src/index.js" # หรือไฟล์หลักของคุณ
+compatibility_date = "2024-01-01"
+
+[[d1_databases]]
+binding = "DB" 
+database_name = "config"
+database_id = "709ff7b7-a196-48ad-8f46-1e65becacf39"

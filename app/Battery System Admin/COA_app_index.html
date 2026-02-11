@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battery ERP | PLACK Series Management</title>
+    <script src="https://cdn.tailwindcss.com" nonce="MjgwNzE3NDY2MSwyMjU2Mjg3NzE4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <nav class="bg-slate-900 text-white p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-bold flex items-center">
+                <i class="fas fa-battery-full mr-2 text-green-400"></i> Battery System Admin
+            </h1>
+            <div id="connectionStatus" class="text-sm bg-green-500 px-3 py-1 rounded-full">API Online</div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto p-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-blue-500">
+                <h3 class="text-gray-500 text-sm font-medium">Battery Packs</h3>
+                <p id="packCount" class="text-3xl font-bold">--</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-purple-500">
+                <h3 class="text-gray-500 text-sm font-medium">PLACK Modules</h3>
+                <p id="moduleCount" class="text-3xl font-bold">--</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-green-500">
+                <h3 class="text-gray-500 text-sm font-medium">Cell Inventory</h3>
+                <p id="cellCount" class="text-3xl font-bold">--</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <div class="lg:col-span-2 bg-white rounded-xl shadow-sm overflow-hidden">
+                <div class="p-4 border-b flex justify-between items-center bg-gray-50">
+                    <h2 class="font-bold">Inventory & Product Series</h2>
+                    <button onclick="fetchProducts()" class="text-blue-600 hover:text-blue-800">
+                        <i class="fas fa-sync-alt"></i> Refresh
+                    </button>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead class="bg-gray-100 text-gray-600 uppercase text-xs">
+                            <tr>
+                                <th class="p-4">SKU / Name</th>
+                                <th class="p-4">Category</th>
+                                <th class="p-4">Stock Status</th>
+                                <th class="p-4">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productTableBody" class="divide-y">
+                            <tr class="animate-pulse">
+                                <td colspan="4" class="p-8 text-center text-gray-400">Loading products...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+                    <h2 class="font-bold mb-4 text-lg border-b pb-2">Quick Add: Battery Cell</h2>
+                    <form id="addCellForm" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Cell Type</label>
+                            <select id="cellType" class="w-full border rounded-lg p-2 bg-gray-50">
+                                <option value="18650">18650</option>
+                                <option value="26650">26650</option>
+                                <option value="32650">32650</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">SKU Name</label>
+                            <input type="text" id="sku" placeholder="e.g. BAT-18650-NEW" class="w-full border rounded-lg p-2">
+                        </div>
+                        <button type="submit" class="w-full bg-slate-900 text-white py-2 rounded-lg hover:bg-slate-800 transition">
+                            Save Product
+                        </button>
+                    </form>
+                </div>
+
+                <div class="bg-slate-800 text-white p-6 rounded-xl shadow-sm">
+                    <h2 class="font-bold mb-4 flex items-center">
+                        <i class="fas fa-search mr-2"></i> Traceability Check
+                    </h2>
+                    <input type="text" placeholder="Enter Batch Number (e.g. LOT6701)" class="w-full p-2 rounded bg-slate-700 border-none text-white mb-2">
+                    <button class="w-full bg-blue-600 py-2 rounded font-medium hover:bg-blue-500">Track Pack History</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script nonce="MjgwNzE3NDY2MSwyMjU2Mjg3NzE4">
+        // --- API Configuration ---
+        const API_URL = 'https://8495bd97bd70a9bb9be1ea903f3ab66b.r2.cloudflarestorage.com/darayar';
+        const API_TOKEN = '{8495bd97bd70a9bb9be1ea903f3ab66b}';
+
+        // --- Core Functions ---
+        async function fetchProducts() {
+            try {
+                const response = await fetch(`${API_URL}/products?limit=10`, {
+                    headers: { 'Authorization': `Bearer ${API_TOKEN}` }
+                });
+                const data = await response.json();
+                renderTable(data);
+                updateCounts(data);
+            } catch (error) {
+                console.error("Failed to fetch:", error);
+                document.getElementById('productTableBody').innerHTML = `<tr><td colspan="4" class="p-8 text-center text-red-500">API Connection Failed</td></tr>`;
+            }
+        }
+
+        function renderTable(products) {
+            const body = document.getElementById('productTableBody');
+            body.innerHTML = products.map(p => `
+                <tr class="hover:bg-gray-50 transition">
+                    <td class="p-4">
+                        <div class="font-bold">${p.name}</div>
+                        <div class="text-xs text-gray-500">${p.sku}</div>
+                    </td>
+                    <td class="p-4">
+                        <span class="px-2 py-1 bg-gray-100 rounded text-xs">${p.category_id == 1 ? 'Cell' : (p.category_id == 2 ? 'PLACK Module' : 'EV Pack')}</span>
+                    </td>
+                    <td class="p-4">
+                        <span class="text-green-600 font-medium">● In Stock</span>
+                    </td>
+                    <td class="p-4">
+                        <button onclick="viewDetails(${p.product_id})" class="text-blue-500 hover:underline text-sm">Details</button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function updateCounts(data) {
+            document.getElementById('packCount').innerText = data.filter(i => i.category_id == 3).length || 0;
+            document.getElementById('moduleCount').innerText = data.filter(i => i.category_id == 2).length || 0;
+            document.getElementById('cellCount').innerText = data.filter(i => i.category_id == 1).length || 0;
+        }
+
+        // --- Event Listeners ---
+        document.getElementById('addCellForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const sku = document.getElementById('sku').value;
+            // Logic to POST data to /rest/products
+            alert(`กำลังบันทึกสินค้าใหม่: ${sku}`);
+        });
+
+        // Initial Load
+        window.onload = fetchProducts;
+    </script>
+</body>
+</html>
