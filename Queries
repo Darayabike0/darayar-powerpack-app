@@ -1,0 +1,24 @@
+ดึงข้อมูลไปโชว์ในแอพ (เรียงตามแรงดันไฟ):
+
+SQL
+SELECT * FROM products WHERE is_active = TRUE ORDER BY energy_wh ASC;
+
+อัปเดตราคาหรือสต็อกสินค้า:
+
+SQL
+UPDATE products SET price = 390.0, stock_count = 20 WHERE series_type = '2S';
+
+ค้นหาสินค้าตามการใช้งาน (เช่น ค้นหาคำว่า "โดรน"):
+
+SQL
+SELECT * FROM products WHERE usage_tags LIKE '%โดรน%';
+
+การเชื่อมต่อกับแอพ Flutter/HTML
+JavaScript
+// ใน Cloudflare Worker (fetch handler)
+if (url.pathname === "/api/get-products") {
+  const { results } = await env.DB.prepare("SELECT * FROM products WHERE is_active = 1").all();
+  return new Response(JSON.stringify(results), {
+    headers: { "Content-Type": "application/json" }
+  });
+}
