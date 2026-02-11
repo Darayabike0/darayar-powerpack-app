@@ -1,0 +1,7 @@
+lib/
+├── main.dart             # จุดเริ่มต้นของแอพ (Entry Point)
+├── models/               # เก็บโครงสร้างข้อมูล (เช่น battery_model.dart)
+├── screens/              # เก็บหน้าจอต่างๆ (Home, Catalog, Contact, Invoice)
+├── services/             # ส่วนติดต่อกับภายนอก (API, Cloudflare Worker, Supabase)
+├── widgets/              # คอมโพเนนต์ที่ใช้ซ้ำ (ProductCard, CustomButton)
+└── utils/                # ฟังก์ชันเสริมอื่นๆ (การคำนวณสเปคแบตเตอรี่, การจัดรูปแบบวันที่)
