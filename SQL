@@ -1,0 +1,15 @@
+CREATE TABLE products (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  model_name TEXT NOT NULL,          -- ชื่อรุ่น เช่น 'Darayar PowerPack 18650'
+  series_type TEXT NOT NULL,         -- ระบบ S เช่น '2S', '3S', '10S'
+  nominal_voltage TEXT,              -- แรงดันปกติ เช่น '7.4V'
+  full_charge_voltage TEXT,          -- แรงดันชาร์จเต็ม เช่น '8.4V'
+  capacity_mah INTEGER,              -- ความจุ (เก็บเป็นตัวเลขเพื่อคำนวณ) เช่น 2000
+  energy_wh REAL,                    -- พลังงานรวม เช่น 14.8
+  usage_tags TEXT,                   -- เก็บตัวอย่างการใช้งาน (Comma separated)
+  price REAL DEFAULT 0.0,            -- ราคาขาย
+  stock_count INTEGER DEFAULT 0,     -- จำนวนสินค้าในคลัง
+  image_url TEXT,                    -- ลิงก์รูปภาพที่เก็บใน R2
+  is_active BOOLEAN DEFAULT TRUE,    -- สถานะการแสดงโชว์สินค้า
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
