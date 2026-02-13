@@ -1,64 +1,69 @@
-darayar-powerpack-app
-
-ระบบแสดงข้อมูลทางเทคนิคและแคตตาล็อกสินค้าออนไลน์สำหรับ DARAYAR BICYCLE LIFESTYLE COMPANY โดยเน้นผลิตภัณฑ์กลุ่ม Battery Power Pack (ICR18650 Series)
-
-📋 ข้อมูลโครงการ (Project Overview)
-
-เว็บไซต์นี้เป็นหน้า Landing Page ที่แสดงข้อมูลใบรับรองมาตรฐาน (COA), ข้อมูลทางเทคนิค (QC Specs), และช่องทางการชำระเงิน สำหรับชุดแบตเตอรี่ลิเธียมไอออนรุ่นต่างๆ โดยรองรับการแสดงผลแบบ Responsive และดึงข้อมูลรูปภาพจาก Cloudflare R2 Storage
-
-🔋 ผลิตภัณฑ์หลัก (Featured Product)
-
-รุ่น PP-DRY03 (14.8V 4S1P 2000mAh)
-
-Voltage: 14.8V (Nominal)
-
-Configuration: 4 Series 1 Parallel (4S1P)
-
-Cell Type: ICR18650 High Quality
-
-Certifications: IEC, CE, MSDS
-
-Applications: Medical Devices, Robotics, Drones, Power Tools
-
-☁️ โครงสร้างพื้นฐาน Cloud (Infrastructure)
-
-โครงการนี้ใช้บริการของ Cloudflare สำหรับการจัดเก็บข้อมูลและจัดการทราฟฟิก:
-
-S3 API Endpoint: 8495bd97bd70a9bb9be1ea903f3ab66b.r2.cloudflarestorage.com
-
-Public Development URL: pub-9ba95f4e6bfb4adaa90b66c08887a631.r2.dev
-
-Warehouse Name: 8495bd97bd70a9bb9be1ea903f3ab66b_darayar
-
-Transformation Settings: Cloudflare API Settings
-
-🛠️ เทคโนโลยีที่ใช้ (Tech Stack)
-
-Frontend: HTML5, Tailwind CSS (CDN)
-
-Icons: Font Awesome 6.4.0
-
-Typography: Google Fonts (Kanit)
-
-Storage: Cloudflare R2 (S3 Compatible)
-
-📁 โครงสร้างไฟล์ (File Structure)
-
-darayar-powerpack-app/
-├── index.html          # หน้าหลักแสดงผล (รุ่นล่าสุด PP-DRY03)
-└── README.md           # เอกสารประกอบโครงการ
-
-
-📞 ข้อมูลติดต่อ (Contact Information)
-
-Company: DALAYAR BICYCLE LIFESTYLE COMPANY
-
-Address: 229 ถนนเกษตรพัฒนา ต.กุดเค้า อ.มัญจาคีรี จ.ขอนแก่น 40160
-
-Phone: 043-289-526
-
-Line OA: @batterydaraya
-
-Website: Google Sites
-
-อัปเดตล่าสุด: 13 กุมภาพันธ์ 2026
+{
+  "project_info": {
+    "name": "darayar-powerpack-app",
+    "organization": "DALAYAR BICYCLE LIFESTYLE COMPANY",
+    "version": "1.1.0",
+    "last_updated": "2026-02-13"
+  },
+  "infrastructure": {
+    "cloud_provider": "Cloudflare",
+    "storage": {
+      "type": "R2 Object Storage",
+      "s3_api_endpoint": "8495bd97bd70a9bb9be1ea903f3ab66b.r2.cloudflarestorage.com",
+      "public_dev_url": "https://pub-9ba95f4e6bfb4adaa90b66c08887a631.r2.dev",
+      "warehouse_name": "8495bd97bd70a9bb9be1ea903f3ab66b_darayar",
+      "zone_id": "e003b4a518f37d9a037838b007a05efa"
+    }
+  },
+  "products": [
+    {
+      "id": "PP-DRY03",
+      "name": "ICR18650 Battery Power Pack",
+      "specifications": {
+        "nominal_voltage": "14.8V",
+        "configuration": "4S1P",
+        "capacity": "2000mAh",
+        "max_charge_current": "500mA (0.25C)",
+        "max_discharge_current": "1000mA (0.5C)",
+        "cycle_life": "500+ @25°C 1C",
+        "operating_temperature": {
+          "min": -40,
+          "max": 85,
+          "unit": "Celsius"
+        },
+        "self_discharge_rate": "≤3% per month"
+      },
+      "certifications": ["IEC", "CE", "MSDS"],
+      "applications": [
+        "Consumer Electronics",
+        "Portable Power Tools",
+        "Medical Devices",
+        "Robotics",
+        "Drones"
+      ],
+      "images": [
+        "https://pub-9ba95f4e6bfb4adaa90b66c08887a631.r2.dev/COA/BATTERY%20POWER%20PLACK/PP-DRY03/2026-02-12_1256184s1p.jpg",
+        "https://pub-9ba95f4e6bfb4adaa90b66c08887a631.r2.dev/COA/BATTERY%20POWER%20PLACK/PP-DRY03/2026-02-12_1256184s1p1.jpg",
+        "https://pub-9ba95f4e6bfb4adaa90b66c08887a631.r2.dev/COA/BATTERY%20POWER%20PLACK/PP-DRY03/2026-02-12_1256184s1p11.jpg",
+        "https://pub-9ba95f4e6bfb4adaa90b66c08887a631.r2.dev/COA/BATTERY%20POWER%20PLACK/PP-DRY03/2026-02-12_1256184s1p12.jpg",
+        "https://pub-9ba95f4e6bfb4adaa90b66c08887a631.r2.dev/COA/BATTERY%20POWER%20PLACK/PP-DRY03/2026-02-12_1256184s1p13.jpg"
+      ]
+    }
+  ],
+  "contact": {
+    "address": "229 ถนนเกษตรพัฒนา ต.กุดเค้า อ.มัญจาคีรี จ.ขอนแก่น 40160",
+    "phone": "043-289-526",
+    "line_oa": "@batterydaraya",
+    "website": "https://sites.google.com/view/batterydarayacom/security"
+  },
+  "payment_methods": [
+    "Thungngern",
+    "Paotang Pay",
+    "PromptPay",
+    "AIS Points",
+    "My Point",
+    "Bangchak",
+    "Max Point",
+    "Global Club"
+  ]
+}
