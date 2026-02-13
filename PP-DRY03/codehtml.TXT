@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PP-DRY03 14.8V Battery Pack - DARAYAR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Kanit', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+        }
+
+        .cert-badge {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .product-image-card:hover img {
+            transform: scale(1.03);
+            transition: all 0.4s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-slate-900">
+
+    <!-- Navigation -->
+    <header class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="https://pub-9ba95f4e6bfb4adaa90b66c08887a631.r2.dev/COA/BATTERY%20POWER%20PLACK/PP-DRY03/2026-02-12_1256184s1p.jpg" alt="Logo" class="w-8 h-8 rounded-full object-cover">
+                <span class="text-xl font-bold tracking-tighter text-indigo-900">DARAYAR <span class="text-indigo-600">POWER</span></span>
+            </div>
+            <nav class="hidden md:flex space-x-8 text-sm font-semibold uppercase">
+                <a href="#overview" class="hover:text-indigo-600 transition">ภาพรวม</a>
+                <a href="#specs" class="hover:text-indigo-600 transition">ข้อมูลเทคนิค</a>
+                <a href="#certifications" class="hover:text-indigo-600 transition">มาตรฐาน</a>
+                <a href="#contact" class="bg-indigo-600 text-white px-5 py-2 rounded-lg hover:bg-indigo-700 transition">ติดต่อเรา</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="overview" class="pt-32 pb-20 hero-gradient text-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2">
+                    <div class="inline-flex items-center space-x-2 bg-indigo-500/30 px-3 py-1 rounded-full text-indigo-200 text-xs font-bold mb-6 border border-indigo-400/30 uppercase tracking-widest">
+                        <i class="fas fa-certificate text-yellow-400"></i>
+                        <span>Model: PP-DRY03 (4S1P)</span>
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+                        14.8V 2000mAh <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-300">High-Voltage Battery Pack</span>
+                    </h1>
+                    <p class="text-indigo-100 text-lg mb-8 leading-relaxed max-w-xl">
+                        ชุดแบตเตอรี่ลิเธียมไอออนคุณภาพสูง ให้พลังงานแรงดันสูงและเสถียรสำหรับการงานเฉพาะทาง 
+                        ออกแบบด้วยเซลล์ ICR18650 ในรูปแบบ 4 อนุกรม 1 ขนาน (4S1P) เพื่อประสิทธิภาพการทำงานที่สม่ำเสมอในขนาดกะทัดรัด
+                    </p>
+                    <div class="grid grid-cols-3 gap-4 mb-8">
+                        <div class="cert-badge p-3 rounded-xl text-center">
+                            <span class="block text-xl font-bold">IEC</span>
+                            <span class="text-[10px] text-indigo-200 uppercase">Certified</span>
+                        </div>
+                        <div class="cert-badge p-3 rounded-xl text-center">
+                            <span class="block text-xl font-bold">CE</span>
+                            <span class="text-[10px] text-indigo-200 uppercase">Approved</span>
+                        </div>
+                        <div class="cert-badge p-3 rounded-xl text-center">
+                            <span class="block text-xl font-bold">MSDS</span>
+                            <span class="text-[10px] text-indigo-200 uppercase">Safety</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="product-image-card overflow-hidden rounded-2xl shadow-2xl border-2 border-indigo-400/20">
+                            <img src="https://pub-9ba95f4e6bfb4adaa90b66c08887a631.r2.dev/COA/BATTERY%20POWER%20PLACK/PP-DRY03/2026-02-12_1256184s1p.jpg" alt="Battery 1" class="w-full h-48 object-cover">
+                        </div>
+                        <div class="product-image-card overflow-hidden rounded-2xl shadow-2xl border-2 border-indigo-400/20 mt-8">
+                            <img src="https://pub-9ba95f4e6bfb4adaa90b66c08887a631.r2.dev/COA/BATTERY%20POWER%20PLACK/PP-DRY03/2026-02-12_1256184s1p1.jpg" alt="Battery 2" class="w-full h-48 object-cover">
+                        </div>
+                        <div class="product-image-card overflow-hidden rounded-2xl shadow-2xl border-2 border-indigo-400/20">
+                            <img src="https://pub-9ba95f4e6bfb4adaa90b66c08887a631.r2.dev/COA/BATTERY%20POWER%20PLACK/PP-DRY03/2026-02-12_1256184s1p11.jpg" alt="Battery 3" class="w-full h-48 object-cover">
+                        </div>
+                        <div class="product-image-card overflow-hidden rounded-2xl shadow-2xl border-2 border-indigo-400/20 mt-8">
+                            <img src="https://pub-9ba95f4e6bfb4adaa90b66c08887a631.r2.dev/COA/BATTERY%20POWER%20PLACK/PP-DRY03/2026-02-12_1256184s1p12.jpg" alt="Battery 4" class="w-full h-48 object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specifications -->
+    <section id="specs" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/3">
+                    <h2 class="text-4xl font-extrabold mb-4 text-indigo-900 underline decoration-indigo-500 decoration-4 underline-offset-8">QC Specs</h2>
+                    <p class="text-slate-500 mb-8">การควบคุมคุณภาพที่เข้มงวดเพื่อพลังงานที่เชื่อถือได้ในทุกสภาวะ</p>
+                    <div class="p-6 bg-indigo-50 rounded-2xl border border-indigo-100">
+                        <img src="https://pub-9ba95f4e6bfb4adaa90b66c08887a631.r2.dev/COA/BATTERY%20POWER%20PLACK/PP-DRY03/2026-02-12_1256184s1p13.jpg" alt="QC Label" class="w-full rounded-lg shadow-md mb-4">
+                        <p class="text-xs text-indigo-400 font-mono">Catalog URI: 8495bd97bd70a9bb9be1ea903f3ab66b_darayar</p>
+                    </div>
+                </div>
+                
+                <div class="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="p-6 bg-gray-50 rounded-2xl border-l-4 border-indigo-600 shadow-sm">
+                        <span class="text-slate-400 text-xs font-bold uppercase">Nominal Voltage</span>
+                        <p class="text-2xl font-bold text-slate-800">14.8 โวลต์</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-2xl border-l-4 border-indigo-600 shadow-sm">
+                        <span class="text-slate-400 text-xs font-bold uppercase">Max Charge (0.25C)</span>
+                        <p class="text-2xl font-bold text-slate-800">500 mA</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-2xl border-l-4 border-indigo-600 shadow-sm">
+                        <span class="text-slate-400 text-xs font-bold uppercase">Max Discharge (0.5C)</span>
+                        <p class="text-2xl font-bold text-slate-800">1,000 mA</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-2xl border-l-4 border-indigo-600 shadow-sm">
+                        <span class="text-slate-400 text-xs font-bold uppercase">Cycle Life</span>
+                        <p class="text-2xl font-bold text-slate-800">500+ รอบ</p>
+                        <p class="text-xs text-slate-400">@ 25°C & 1C</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-2xl border-l-4 border-indigo-600 shadow-sm">
+                        <span class="text-slate-400 text-xs font-bold uppercase">Operating Temp</span>
+                        <p class="text-2xl font-bold text-slate-800">-40 ถึง 85 °C</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-2xl border-l-4 border-indigo-600 shadow-sm">
+                        <span class="text-slate-400 text-xs font-bold uppercase">Self Discharge</span>
+                        <p class="text-2xl font-bold text-slate-800">≤3% / เดือน</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applications & Safety -->
+    <section class="py-20 bg-slate-900 text-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-8">การใช้งานและพื้นที่จำกัด (Space Efficiency)</h2>
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center shrink-0">
+                                <i class="fas fa-stethoscope"></i>
+                            </div>
+                            <p class="text-indigo-100"><strong>อุปกรณ์ทางการแพทย์:</strong> ให้แรงดันคงที่เพื่อความปลอดภัยสูงสุด</p>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center shrink-0">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <p class="text-indigo-100"><strong>หุ่นยนต์และโดรน:</strong> น้ำหนักเบาแต่ให้พลังงานสูง (High Energy Density)</p>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center shrink-0">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <p class="text-indigo-100"><strong>เครื่องมือไฟฟ้าแบบพกพา:</strong> ทนทานต่อการคายประจุสูง</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-indigo-800/20 p-8 rounded-3xl border border-indigo-500/30">
+                    <h3 class="text-2xl font-bold mb-4 text-indigo-300">ความปลอดภัยคือหัวใจหลัก</h3>
+                    <p class="text-slate-300 mb-6 italic leading-relaxed">
+                        "รูปแบบ 4S1P ของเราได้รับการออกแบบมาสำหรับอุปกรณ์ที่ต้องการแรงดันไฟฟ้าในการทำงานสูงขึ้น 
+                        โดยยังคงรักษาขนาดที่กะทัดรัด สร้างขึ้นเพื่อความน่าเชื่อถือในกรณีที่พื้นที่จำกัด"
+                    </p>
+                    <ul class="grid grid-cols-2 gap-4">
+                        <li class="flex items-center text-sm"><i class="fas fa-shield-virus mr-2 text-green-400"></i> IEC 62133 Approved</li>
+                        <li class="flex items-center text-sm"><i class="fas fa-shield-virus mr-2 text-green-400"></i> CE Compliance</li>
+                        <li class="flex items-center text-sm"><i class="fas fa-shield-virus mr-2 text-green-400"></i> MSDS Safety Data</li>
+                        <li class="flex items-center text-sm"><i class="fas fa-shield-virus mr-2 text-green-400"></i> Quality Checked</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment & Contact -->
+    <section id="contact" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Payment -->
+                <div>
+                    <h2 class="text-3xl font-extrabold mb-8 text-slate-800">ช่องทางการชำระเงิน</h2>
+                    <div class="flex flex-wrap gap-4 mb-10">
+                        <span class="px-5 py-2 bg-white rounded-xl shadow-sm border border-slate-200 font-bold text-indigo-600">ถุงเงิน</span>
+                        <span class="px-5 py-2 bg-white rounded-xl shadow-sm border border-slate-200 font-bold text-blue-500">เป๋าตังเปย์</span>
+                        <span class="px-5 py-2 bg-white rounded-xl shadow-sm border border-slate-200 font-bold text-green-600">พร้อมเพย์</span>
+                        <span class="px-5 py-2 bg-white rounded-xl shadow-sm border border-slate-200 font-bold text-slate-700">AIS Points</span>
+                        <span class="px-5 py-2 bg-white rounded-xl shadow-sm border border-slate-200 font-bold text-red-500">My Point</span>
+                        <span class="px-5 py-2 bg-white rounded-xl shadow-sm border border-slate-200 font-bold text-green-700">Bangchak</span>
+                        <span class="px-5 py-2 bg-white rounded-xl shadow-sm border border-slate-200 font-bold text-yellow-600">Max Point</span>
+                    </div>
+                    
+                    <div class="bg-slate-200/50 p-6 rounded-2xl border border-slate-300">
+                        <h4 class="text-xs font-bold uppercase text-slate-500 mb-2">Cloud Infrastructure Reference</h4>
+                        <div class="font-mono text-[11px] text-slate-600 break-all leading-relaxed">
+                            <p>S3: 8495bd97bd70a9bb9be1ea903f3ab66b.r2.cloudflarestorage.com</p>
+                            <p>TRANSFORM: api.cloudflare.com/client/v4/zones/e003b4a518f37d9a037838b007a05efa/settings/transformations</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Card -->
+                <div class="bg-white p-10 rounded-3xl shadow-2xl border border-slate-100 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-indigo-600 text-white px-6 py-2 rounded-bl-3xl font-bold">CONTACT</div>
+                    <h3 class="text-2xl font-bold mb-6 text-indigo-900 leading-tight">DALAYAR BICYCLE LIFESTYLE COMPANY</h3>
+                    <div class="space-y-4 mb-8 text-slate-600">
+                        <p class="flex items-start"><i class="fas fa-map-marker-alt mt-1 mr-3 text-indigo-600"></i> 229 ถนนเกษตรพัฒนา ต.กุดเค้า อ.มัญจาคีรี จ.ขอนแก่น 40160</p>
+                        <p class="flex items-center"><i class="fas fa-phone mr-3 text-indigo-600"></i> <a href="tel:043289526" class="hover:text-indigo-600 transition">043-289-526</a></p>
+                        <p class="flex items-center"><i class="fab fa-line mr-3 text-indigo-600"></i> <a href="https://lin.ee/rbntBO6" target="_blank" class="hover:text-indigo-600 transition">@batterydaraya</a></p>
+                    </div>
+                    <div class="flex gap-4">
+                        <a href="https://lin.ee/rbntBO6" class="flex-1 bg-[#06C755] text-white text-center py-4 rounded-2xl font-bold hover:opacity-90 transition">LINE OA</a>
+                        <a href="https://sites.google.com/view/batterydarayacom/security" class="flex-1 bg-indigo-900 text-white text-center py-4 rounded-2xl font-bold hover:bg-black transition">WEBSITE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-indigo-950 text-indigo-400 py-10 border-t border-indigo-900">
+        <div class="container mx-auto px-6 text-center text-sm">
+            <p class="mb-2">© 2026 DARAYAR BICYCLE LIFESTYLE COMPANY - Reliable Power Partner</p>
+            <p class="text-xs opacity-60">Certified by IEC, CE, MSDS for highest safety standards.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
