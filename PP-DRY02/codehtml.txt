@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PP-DRY02 Battery Pack - DARAYAR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Kanit', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-dark {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+
+        .img-gallery:hover img {
+            transform: scale(1.05);
+            transition: transform 0.5s ease;
+        }
+
+        .payment-chip {
+            background: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 9999px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- Header -->
+    <header class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 bg-orange-600 rounded flex items-center justify-center text-white">
+                    <i class="fas fa-energy"></i>
+                </div>
+                <span class="text-xl font-bold tracking-tighter">DARAYAR <span class="text-orange-600">COA</span></span>
+            </div>
+            <div class="hidden md:flex space-x-6 text-sm font-semibold uppercase tracking-wider">
+                <a href="#product" class="hover:text-orange-600 transition">Product</a>
+                <a href="#specs" class="hover:text-orange-600 transition">Specs</a>
+                <a href="#contact" class="hover:text-orange-600 transition">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="product" class="pt-28 pb-16 gradient-dark text-white overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <span class="bg-orange-600 text-white text-xs font-bold px-3 py-1 rounded-full mb-4 inline-block uppercase tracking-widest">Model: PP-DRY02</span>
+                    <h1 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">
+                        11.1V 3S1P 2000mAh <br>
+                        <span class="text-orange-400">ICR18650 Battery Pack</span>
+                    </h1>
+                    <p class="text-slate-400 text-lg mb-8">
+                        แหล่งพลังงานคุณภาพสูง ออกแบบมาเพื่อความเสถียรสูงสุดในอุปกรณ์อิเล็กทรอนิกส์ หุ่นยนต์ และโดรน รองรับอุณหภูมิตั้งแต่ -40°C ถึง 85°C
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="bg-orange-600 hover:bg-orange-700 px-8 py-3 rounded-lg font-bold transition flex items-center">
+                            สั่งซื้อ/สอบถาม <i class="fas fa-chevron-right ml-2 text-xs"></i>
+                        </a>
+                        <a href="https://pub-9ba95f4e6bfb4adaa90b66c08887a631.r2.dev" target="_blank" class="bg-slate-800 hover:bg-slate-700 px-8 py-3 rounded-lg font-bold transition border border-slate-700">
+                            R2 Storage Access
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 grid grid-cols-2 gap-4">
+                    <div class="img-gallery overflow-hidden rounded-xl shadow-2xl">
+                        <img src="https://pub-9ba95f4e6bfb4adaa90b66c08887a631.r2.dev/COA/BATTERY%20POWER%20PLACK/PP-DRY02/3s1p2026-02-12_12280611.jpg" alt="Battery Pack View 1" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="img-gallery overflow-hidden rounded-xl shadow-2xl mt-8">
+                        <img src="https://pub-9ba95f4e6bfb4adaa90b66c08887a631.r2.dev/COA/BATTERY%20POWER%20PLACK/PP-DRY02/3s1p2026-02-12_1228061.jpg" alt="Battery Pack View 2" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="img-gallery overflow-hidden rounded-xl shadow-2xl">
+                        <img src="https://pub-9ba95f4e6bfb4adaa90b66c08887a631.r2.dev/COA/BATTERY%20POWER%20PLACK/PP-DRY02/3s1p2026-02-12_122806.jpg" alt="Battery Pack View 3" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="img-gallery overflow-hidden rounded-xl shadow-2xl mt-8">
+                        <img src="https://pub-9ba95f4e6bfb4adaa90b66c08887a631.r2.dev/COA/BATTERY%20POWER%20PLACK/PP-DRY02/2026-02-12_12324211.jpg" alt="Battery Pack Label" class="w-full h-48 object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specs Section -->
+    <section id="specs" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-2">Technical Specifications</h2>
+                    <p class="text-slate-500 italic">Product Compliance: DARAYAR/COA/BATTERY POWER PACK</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-slate-200 border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                    <div class="bg-white p-6">
+                        <p class="text-xs font-bold text-orange-600 uppercase mb-1">Nominal Voltage</p>
+                        <p class="text-xl font-semibold">11.1 โวลต์</p>
+                    </div>
+                    <div class="bg-white p-6">
+                        <p class="text-xs font-bold text-orange-600 uppercase mb-1">Max Constant Charge (0.25C)</p>
+                        <p class="text-xl font-semibold">500 mA</p>
+                    </div>
+                    <div class="bg-white p-6">
+                        <p class="text-xs font-bold text-orange-600 uppercase mb-1">Max Discharge (0.5C)</p>
+                        <p class="text-xl font-semibold">1,000 mA</p>
+                    </div>
+                    <div class="bg-white p-6">
+                        <p class="text-xs font-bold text-orange-600 uppercase mb-1">Cycle Life (@25°C@1C)</p>
+                        <p class="text-xl font-semibold">500+ Cycles</p>
+                    </div>
+                    <div class="bg-white p-6">
+                        <p class="text-xs font-bold text-orange-600 uppercase mb-1">Self Discharge Rate</p>
+                        <p class="text-xl font-semibold">≤3% ต่อเดือน</p>
+                    </div>
+                    <div class="bg-white p-6">
+                        <p class="text-xs font-bold text-orange-600 uppercase mb-1">Operating Temperature</p>
+                        <p class="text-xl font-semibold">-40 ถึง 85 °C</p>
+                    </div>
+                </div>
+
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-slate-50 p-8 rounded-3xl">
+                    <div>
+                        <h3 class="font-bold text-lg mb-4 flex items-center">
+                            <i class="fas fa-microchip mr-2 text-orange-600"></i> เหมาะสำหรับการใช้งาน:
+                        </h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Consumer Electronics</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Portable Power Tools</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Medical Devices (เครื่องมือแพทย์)</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Robotics & Drones (หุ่นยนต์และโดรน)</li>
+                        </ul>
+                    </div>
+                    <div class="border-l-0 md:border-l border-slate-200 md:pl-8">
+                        <h3 class="font-bold text-lg mb-4 flex items-center">
+                            <i class="fas fa-warehouse mr-2 text-orange-600"></i> Storage Guide:
+                        </h3>
+                        <p class="text-slate-600">อุณหภูมิที่แนะนำสำหรับการจัดเก็บคือ <strong>10~35 °C</strong> เพื่อรักษาประสิทธิภาพของเซลล์แบตเตอรี่ให้ยาวนานที่สุด</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment & Contact -->
+    <section id="contact" class="py-20 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Payment -->
+                <div>
+                    <h2 class="text-2xl font-bold mb-6">Payment Channels</h2>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="payment-chip">ถุงเงิน</span>
+                        <span class="payment-chip">เป๋าตังเปย์</span>
+                        <span class="payment-chip">พร้อมเพย์</span>
+                        <span class="payment-chip">AIS Points</span>
+                        <span class="payment-chip">My Point</span>
+                        <span class="payment-chip">Bangchak</span>
+                        <span class="payment-chip">Max Point</span>
+                        <span class="payment-chip">Global Club</span>
+                    </div>
+                    <div class="mt-8 p-6 bg-white rounded-2xl shadow-sm border border-slate-200">
+                        <h3 class="font-bold mb-4">Cloud Architecture</h3>
+                        <div class="text-[10px] text-slate-400 font-mono space-y-1">
+                            <p>S3_API: 8495bd97bd70a9bb9be1ea903f3ab66b.r2.cloudflarestorage.com</p>
+                            <p>WAREHOUSE: 8495bd97bd70a9bb9be1ea903f3ab66b_darayar</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-100">
+                    <h2 class="text-2xl font-bold mb-6 text-orange-600">ข้อมูลติดต่อเพื่อความร่วมมือ</h2>
+                    <div class="space-y-4">
+                        <p><strong>บริษัท:</strong> DALAYAR BICYCLE LIFESTYLE COMPANY</p>
+                        <p><strong>ที่อยู่:</strong> 229 ถนนเกษตรพัฒนา ต.กุดเค้า อ.มัญจาคีรี จ.ขอนแก่น 40160</p>
+                        <p><strong>โทรศัพท์:</strong> <a href="tel:043289526" class="text-blue-600 hover:underline">043-289-526</a></p>
+                        
+                        <div class="pt-4 flex flex-col sm:flex-row gap-4">
+                            <a href="https://lin.ee/rbntBO6" target="_blank" class="flex-1 flex items-center justify-center bg-[#06C755] text-white py-3 rounded-xl font-bold">
+                                <i class="fab fa-line mr-2 text-xl"></i> @batterydaraya
+                            </a>
+                            <a href="https://sites.google.com/view/batterydarayacom/security" target="_blank" class="flex-1 flex items-center justify-center bg-slate-800 text-white py-3 rounded-xl font-bold">
+                                <i class="fas fa-shield-alt mr-2"></i> Security Info
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-500 py-8 text-center text-sm border-t border-slate-800">
+        <p>© 2026 DALAYAR BICYCLE LIFESTYLE COMPANY | Khon Kaen, Thailand</p>
+    </footer>
+
+</body>
+</html>
