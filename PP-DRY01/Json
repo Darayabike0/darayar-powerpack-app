@@ -1,0 +1,13 @@
+{
+  "product": {
+    "sku": "PP-DRY01",
+    "name": "dalayar 7.4v 2000mAh",
+    "spec": {
+      "voltage": "7.4V",
+      "capacity": "2000mAh"
+    },
+    "price": 250,
+    "currency": "THB",
+    "availability": "In Stock"
+  }
+}
