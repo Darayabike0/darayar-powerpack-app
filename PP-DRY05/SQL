@@ -1,0 +1,18 @@
+INSERT INTO Products (SKU, ProductName, Voltage, Capacity, Price, Unit, Description)
+VALUES (
+    'PP-DRY05', 
+    'dalayar 18.5v 2000mAh', 
+    '18.5V', 
+    '2000mAh', 
+    650.00, -- ราคาโดยประมาณ (ปรับเปลี่ยนได้ตามจริง)
+    'ชิ้น', 
+    'ชุดแบตเตอรี่ลิเธียมไอออนความดันสูง 18.5V เหมาะสำหรับอุปกรณ์ที่ต้องการกำลังสูง'
+);
+
+INSERT INTO BatteryProduction (CellType, Configuration, WarrantyExpiry, CustomerID)
+VALUES (
+    '18650', 
+    '5S1P (18.5V)', -- การกำหนดค่าแรงดัน
+    date('now', '+1 year'), -- รับประกัน 1 ปี
+    1 -- รหัสลูกค้าหรือสต็อกกลางของ Dalayar
+);
