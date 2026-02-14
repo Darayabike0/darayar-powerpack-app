@@ -1,0 +1,22 @@
+Product: PowerPack Battery 22.2v
+SKU: PP-DRY06
+Spec: 22.2v/2000mAh
+
+file:///storage/E52F-1BF0/Download/PP-DRY06.Json
+https://raw.githubusercontent.com/Darayabike0/darayar-powerpack-app/refs/heads/DALAYAR/PP-DRY06/Json
+
+file:///storage/E52F-1BF0/Download/PP-DRY06.Html
+https://raw.githubusercontent.com/Darayabike0/darayar-powerpack-app/refs/heads/DALAYAR/PP-DRY06/Html
+
+file:///storage/E52F-1BF0/Download/PP-DRY06.Css
+https://raw.githubusercontent.com/Darayabike0/darayar-powerpack-app/refs/heads/DALAYAR/PP-DRY06/Css
+file:///storage/E52F-1BF0/Download/PP-DRY06.sql
+https://raw.githubusercontent.com/Darayabike0/darayar-powerpack-app/refs/heads/DALAYAR/PP-DRY06/SQL
+
+Imagine 
+[  ] https://github.com/Darayabike0/darayar-powerpack-app/blob/DALAYAR/PP-DRY06/PP-DRY05_5.jpg
+[  ] https://github.com/Darayabike0/darayar-powerpack-app/blob/DALAYAR/PP-DRY06/PP-DRY05_4.jpg
+[  ] https://github.com/Darayabike0/darayar-powerpack-app/blob/DALAYAR/PP-DRY06/PP-DRY05_3.jpg
+[  ] https://github.com/Darayabike0/darayar-powerpack-app/blob/DALAYAR/PP-DRY06/PP-DRY05_2.jpg
+[  ] https://github.com/Darayabike0/darayar-powerpack-app/blob/DALAYAR/PP-DRY06/PP-DRY05_10.jpg
+[  ] https://github.com/Darayabike0/darayar-powerpack-app/blob/DALAYAR/PP-DRY06/2026-02-09_042111.jpg
