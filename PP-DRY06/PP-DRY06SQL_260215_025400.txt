@@ -1,0 +1,33 @@
+INSERT INTO Products (SKU, ProductName, Voltage, Capacity, Config, Price, Description, GitHub_URL)
+VALUES (
+    'PP-DRY06', 
+    'PowerPack Battery 22.2v', 
+    '22.2V', 
+    '2000mAh', 
+    '6S1P', 
+    850.00, 
+    'แบตเตอรี่แพ็คแรงดันสูง 22.2V (6S) สำหรับงานอุตสาหกรรมและอุปกรณ์ไฟฟ้ากำลังสูง',
+    'https://raw.githubusercontent.com/Darayabike0/darayar-powerpack-app/refs/heads/DALAYAR/PP-DRY06/Product%20PowerPack%20Battery%20222v_260215_024348.txt'
+);
+
+INSERT INTO BatteryProduction (BatchID, SKU, CellType, NominalVoltage, Capacity_mAh, ProductionDate)
+VALUES (
+    'LOT-260215-024348', 
+    'PP-DRY06', 
+    '18650 High-Drain', 
+    22.2, 
+    2000, 
+    '2026-02-15'
+);
+
+   SELECT SKU, ProductName, Voltage, Price, GitHub_URL 
+FROM Products 
+WHERE SKU = 'PP-DRY06';
+
+ * ตรวจสอบสต็อกสินค้ากลุ่ม PowerPack ทั้งหมด:
+   SELECT SKU, ProductName, Voltage, Capacity, Price 
+FROM Products 
+WHERE SKU LIKE 'PP-DRY%';
+
+INSERT INTO SystemConfig (ConfigKey, ConfigValue, Description)
+VALUES ('GITHUB_BRANCH_RAW', 'https://raw.githubusercontent.com/Darayabike0/darayar-powerpack-app/refs/heads/DALAYAR/', 'Path สำหรับดึงข้อมูล Raw จาก GitHub Branch DALAYAR');
