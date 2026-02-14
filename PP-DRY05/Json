@@ -1,0 +1,16 @@
+{
+  "product_info": {
+    "sku": "PP-DRY05",
+    "name": "dalayar 18.5v 2000mAh",
+    "specs": {
+      "voltage": "18.5V",
+      "capacity": "2000mAh",
+      "configuration": "5S1P",
+      "cell_type": "Li-ion 18650"
+    },
+    "pricing": {
+      "base_price": 650,
+      "currency": "THB"
+    }
+  }
+}
