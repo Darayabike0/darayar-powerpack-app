@@ -1,0 +1,85 @@
+:root {
+    --primary-blue: #005a9c;
+    --high-voltage: #e67e22; /* สีส้มแจ้งเตือนแรงดันสูง */
+    --dark-slate: #2c3e50;
+    --bg-grey: #f4f7f6;
+}
+
+body {
+    font-family: 'Sarabun', sans-serif;
+    background: var(--bg-grey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.product-container {
+    background: white;
+    width: 380px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    border-top: 6px solid var(--high-voltage);
+}
+
+.series-tag {
+    background: #fff3e0;
+    color: var(--high-voltage);
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.specs-box {
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 0;
+}
+
+.spec-card {
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 10px;
+    width: 30%;
+    text-align: center;
+}
+
+.spec-card strong {
+    display: block;
+    color: var(--primary-blue);
+    font-size: 1.1rem;
+}
+
+.pricing {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.pricing .amount {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--dark-slate);
+}
+
+.btn-primary {
+    width: 100%;
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.btn-outline {
+    display: block;
+    text-align: center;
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
