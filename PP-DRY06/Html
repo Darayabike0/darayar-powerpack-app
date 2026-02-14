@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PP-DRY06 | PowerPack 22.2V</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="product-container">
+        <div class="product-header">
+            <span class="series-tag">PowerPack Series</span>
+            <span class="sku-id">SKU: PP-DRY06</span>
+        </div>
+
+        <div class="product-main">
+            <h1>PowerPack Battery 22.2v</h1>
+            <p class="description">แบตเตอรี่แพ็คประสิทธิภาพสูง สำหรับอุปกรณ์ที่ต้องการแรงดันเสถียรและความปลอดภัยสูง</p>
+            
+            <div class="specs-box">
+                <div class="spec-card">
+                    <small>Voltage</small>
+                    <strong>22.2V</strong>
+                </div>
+                <div class="spec-card">
+                    <small>Capacity</small>
+                    <strong>2000mAh</strong>
+                </div>
+                <div class="spec-card">
+                    <small>Configuration</small>
+                    <strong>6S1P</strong>
+                </div>
+            </div>
+
+            <div class="pricing">
+                <span class="currency">฿</span>
+                <span class="amount">850.00</span>
+            </div>
+
+            <div class="button-group">
+                <button class="btn-primary">เพิ่มลงรถเข็น</button>
+                <a href="https://github.com/Darayabike0/darayar-powerpack-app" class="btn-outline">ดูข้อมูลทางเทคนิค (GitHub)</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
