@@ -1,0 +1,85 @@
+:root {
+    --primary: #005a9c;
+    --accent: #ff9800;
+    --dark: #2c3e50;
+    --light: #ecf0f1;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Sarabun', sans-serif;
+    background-color: var(--light);
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+.product-card {
+    background: var(--white);
+    width: 400px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    padding: 25px;
+    border-top: 5px solid var(--primary);
+}
+
+.badge-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.badge {
+    background: #e1f5fe;
+    color: var(--primary);
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.spec-item {
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.label { font-size: 0.7rem; color: #7f8c8d; display: block; }
+.value { font-weight: bold; color: var(--dark); }
+
+.price-tag {
+    font-size: 2rem;
+    color: var(--primary);
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.btn-github {
+    display: block;
+    text-align: center;
+    background: #24292e;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.btn-buy {
+    width: 100%;
+    background: var(--accent);
+    border: none;
+    color: white;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
