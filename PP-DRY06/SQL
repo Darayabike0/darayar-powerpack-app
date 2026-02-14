@@ -1,0 +1,2 @@
+INSERT INTO Products (SKU, ProductName, Voltage, Capacity, Price, Configuration)
+VALUES ('PP-DRY06', 'PowerPack Battery 22.2v', '22.2V', '2000mAh', 850.00, '6S1P');
