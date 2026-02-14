@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PP-DRY05 | Dalayar Powerpack</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="product-card">
+        <header class="badge-container">
+            <span class="badge">Model: PP-DRY05</span>
+            <span class="status">In Stock</span>
+        </header>
+        
+        <div class="product-info">
+            <h1>Plack-5S1P-2000mAh</h1>
+            <p class="sku">SKU: LOT-20251024-05</p>
+            
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <span class="label">Voltage</span>
+                    <span class="value">18.5V</span>
+                </div>
+                <div class="spec-item">
+                    <span class="label">Capacity</span>
+                    <span class="value">2000mAh</span>
+                </div>
+                <div class="spec-item">
+                    <span class="label">Config</span>
+                    <span class="value">5S1P</span>
+                </div>
+            </div>
+
+            <div class="price-tag">฿250.00</div>
+            
+            <div class="actions">
+                <a href="https://github.com/Darayabike0/darayar-powerpack-app/tree/fcb2a058ab1b597976f7a431d906fc9ad75d6725/PP-DRY05" target="_blank" class="btn-github">
+                    View Source on GitHub
+                </a>
+                <button class="btn-buy">สั่งซื้อตอนนี้</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
