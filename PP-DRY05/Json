@@ -1,16 +1,12 @@
 {
-  "product_info": {
-    "sku": "PP-DRY05",
-    "name": "dalayar 18.5v 2000mAh",
-    "specs": {
-      "voltage": "18.5V",
-      "capacity": "2000mAh",
-      "configuration": "5S1P",
-      "cell_type": "Li-ion 18650"
-    },
-    "pricing": {
-      "base_price": 650,
-      "currency": "THB"
-    }
-  }
+  "product_id": "PP-DRY05",
+  "sku": "LOT-20251024-05",
+  "model_name": "Plack-5S1P-2000mAh",
+  "technical_data": {
+    "voltage": "18.5V",
+    "capacity": "2000mAh",
+    "configuration": "5S1P",
+    "total_cells": 5
+  },
+  "source_code": "https://github.com/Darayabike0/darayar-powerpack-app/tree/fcb2a058ab1b597976f7a431d906fc9ad75d6725/PP-DRY05"
 }
