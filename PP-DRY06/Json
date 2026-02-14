@@ -1,0 +1,23 @@
+{
+  "product_metadata": {
+    "sku": "PP-DRY06",
+    "name": "PowerPack Battery 22.2v",
+    "technical_spec": {
+      "nominal_voltage": 22.2,
+      "full_charge_voltage": 25.2,
+      "capacity": "2000mAh",
+      "chemistry": "Lithium-ion",
+      "cell_config": "6S1P"
+    },
+    "inventory": {
+      "base_price": 850,
+      "currency": "THB",
+      "stock_status": "available",
+      "location": "Khon Kaen Warehouse"
+    },
+    "links": {
+      "documentation": "https://github.com/Darayabike0/darayar-powerpack-app/tree/main/PP-DRY06",
+      "support": "https://lin.ee/rbntBO6"
+    }
+  }
+}
