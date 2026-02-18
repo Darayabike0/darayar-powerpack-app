@@ -1,155 +1,398 @@
-darayar-powerpack-app
+# CFSSL
 
-ระบบแสดงข้อมูลทางเทคนิคและแคตตาล็อกสินค้าออนไลน์สำหรับ DARAYAR BICYCLE LIFESTYLE COMPANY โดยเน้นการนำเสนอผลิตภัณฑ์กลุ่ม Battery Power Pack (ICR18650 Series) ที่มีมาตรฐานความปลอดภัยสูง
+[![Build Status](https://travis-ci.org/cloudflare/cfssl.svg?branch=master)](https://travis-ci.org/cloudflare/cfssl)
+[![Coverage Status](http://codecov.io/github/cloudflare/cfssl/coverage.svg?branch=master)](http://codecov.io/github/cloudflare/cfssl?branch=master)
+[![GoDoc](https://godoc.org/github.com/cloudflare/cfssl?status.svg)](https://godoc.org/github.com/cloudflare/cfssl)
 
-📋 ข้อมูลโครงการ (Project Overview)
+## CloudFlare's PKI/TLS toolkit
 
-เว็บไซต์นี้ทำหน้าที่เป็นหน้า Landing Page และระบบจัดเก็บเอกสารดิจิทัลที่แสดงข้อมูลใบรับรองมาตรฐาน (Certificate of Analysis - COA), ข้อมูลการตรวจสอบคุณภาพทางเทคนิค (QC Specs), และรายละเอียดช่องทางการชำระเงินที่หลากหลาย สำหรับชุดแบตเตอรี่ลิเธียมไอออนรุ่นต่างๆ
+CFSSL is CloudFlare's PKI/TLS swiss army knife. It is both a command line
+tool and an HTTP API server for signing, verifying, and bundling TLS
+certificates. It requires Go 1.20+ to build.
 
-จุดเด่นของระบบ:
+Note that certain linux distributions have certain algorithms removed
+(RHEL-based distributions in particular), so the golang from the
+official repositories will not work. Users of these distributions should
+[install go manually](//golang.org/dl) to install CFSSL.
 
-Responsive Design: รองรับการแสดงผลทุกหน้าจอ (Desktop, Tablet, Mobile)
+CFSSL consists of:
 
-Cloud-Integrated: ดึงข้อมูลรูปภาพและไฟล์จาก Cloudflare R2 Storage โดยตรง
+* a set of packages useful for building custom TLS PKI tools
+* the `cfssl` program, which is the canonical command line utility
+  using the CFSSL packages.
+* the `multirootca` program, which is a certificate authority server
+  that can use multiple signing keys.
+* the `mkbundle` program is used to build certificate pool bundles.
+* the `cfssljson` program, which takes the JSON output from the
+  `cfssl` and `multirootca` programs and writes certificates, keys,
+  CSRs, and bundles to disk.
 
-Modern UI: ใช้การออกแบบที่เน้นความน่าเชื่อถือและเข้าถึงข้อมูลได้ง่าย
+### Building
 
-🔋 ผลิตภัณฑ์หลัก (Featured Product)
+Building cfssl requires a
+[working Go 1.20+ installation](http://golang.org/doc/install).
 
-รุ่น PP-DRY03 (14.8V 4S1P 2000mAh)
+```
+$ git clone git@github.com:cloudflare/cfssl.git
+$ cd cfssl
+$ make
+$ make install
+```
 
-ชุดแบตเตอรี่ลิเธียมไอออนที่เน้นประสิทธิภาพด้านแรงดันไฟฟ้าและขนาดที่กะทัดรัด
+The resulting binaries will be in the bin folder:
+```
+$ tree bin
+bin
+├── cfssl
+├── cfssl-bundle
+├── cfssl-certinfo
+├── cfssl-newkey
+├── cfssl-scan
+├── cfssljson
+├── mkbundle
+└── multirootca
 
-Voltage: 14.8V (Nominal Voltage)
+0 directories, 8 files
+```
 
-Configuration: 4 Series 1 Parallel (4S1P) จัดเรียงเซลล์แบบอนุกรม 4 ก้อน
+#### Cross Compilation
 
-Cell Type: ICR18650 คุณภาพสูง (High Energy Density)
+You can set the `GOOS` and `GOARCH` environment variables to have Go cross compile for alternative platforms; however, cfssl requires cgo, and cgo requires a working compiler toolchain for the target platform.
 
-Certifications: ได้รับการรับรองมาตรฐานสากล IEC, CE และเอกสารความปลอดภัย MSDS
+### Installation
 
-Operating Temp: รองรับสภาวะอากาศสุดขั้วตั้งแต่ -40°C ถึง 85°C
+Installation requires a [working Go 1.20+ installation](http://golang.org/doc/install).
+Alternatively, [prebuilt binaries are available](https://github.com/cloudflare/cfssl/releases)
 
-Applications: ออกแบบมาเพื่ออุปกรณ์ทางการแพทย์ (Medical Devices), หุ่นยนต์ (Robotics), โดรน (Drones) และเครื่องมือไฟฟ้าแบบพกพา (Power Tools)
+```
+$ go install github.com/cloudflare/cfssl/cmd/...@latest
+```
 
-☁️ โครงสร้างพื้นฐาน Cloud (Infrastructure)
+This will download, build, and install all of the utility programs
+(including `cfssl`, `cfssljson`, and `mkbundle` among others).
 
-โครงการนี้ใช้เทคโนโลยี Cloud-Native จาก Cloudflare เพื่อความรวดเร็วและความปลอดภัยในการรับส่งข้อมูล:
+### Using the Command Line Tool
 
-S3 API Endpoint: 8495bd97bd70a9bb9be1ea903f3ab66b.r2.cloudflarestorage.com
+The `cfssl` command line tool takes a command to specify what
+operation it should carry out:
 
-Public Development URL: pub-9ba95f4e6bfb4adaa90b66c08887a631.r2.dev
+       sign             signs a certificate
+       bundle           build a certificate bundle
+       genkey           generate a private key and a certificate request
+       gencert          generate a private key and a certificate
+       serve            start the API server
+       version          prints out the current version
+       selfsign         generates a self-signed certificate
+       print-defaults   print default configurations
 
-Warehouse Name: 8495bd97bd70a9bb9be1ea903f3ab66b_darayar
+Use `cfssl [command] -help` to find out more about a command.
+The `version` command takes no arguments.
 
-Transformation Settings: Cloudflare API Settings
+#### Signing
 
-🛠️ เทคโนโลยีที่ใช้ (Tech Stack)
+```
+cfssl sign [-ca cert] [-ca-key key] [-hostname comma,separated,hostnames] csr [subject]
+```
 
-Frontend Framework: HTML5 ร่วมกับ Tailwind CSS (via CDN) เพื่อความรวดเร็วในการโหลดหน้าเว็บ
+The `csr` is the client's certificate request. The `-ca` and `-ca-key`
+flags are the CA's certificate and private key, respectively. By
+default, they are `ca.pem` and `ca_key.pem`. The `-hostname` is
+a comma separated hostname list that overrides the DNS names and
+IP address in the certificate SAN extension.
+For example, assuming the CA's private key is in
+`/etc/ssl/private/cfssl_key.pem` and the CA's certificate is in
+`/etc/ssl/certs/cfssl.pem`, to sign the `cloudflare.pem` certificate
+for cloudflare.com:
 
-Iconography: Font Awesome 6.4.0 (SVG-based icons)
+```
+cfssl sign -ca     /etc/ssl/certs/cfssl.pem       \
+           -ca-key /etc/ssl/private/cfssl_key.pem \
+           -hostname cloudflare.com               \
+           ./cloudflare.pem
+```
 
-Typography: Google Fonts - 'Kanit' สำหรับการอ่านภาษาไทยที่ชัดเจน
+It is also possible to specify CSR with the `-csr` flag. By doing so,
+flag values take precedence and will overwrite the argument.
 
-Cloud Storage: Cloudflare R2 (S3 Compatible Object Storage)
+The subject is an optional file that contains subject information that
+should be used in place of the information from the CSR. It should be
+a JSON file as follows:
 
-📁 โครงสร้างไฟล์ (File Structure)
-
-darayar-powerpack-app/
-├── index.html          # หน้าหลักแสดงผล (รุ่นล่าสุด PP-DRY03 พร้อม UI แกลเลอรีรูปภาพ)
-└── README.md           # เอกสารประกอบโครงการและคู่มือการเชื่อมต่อระบบ Cloud
-
-
-💳 ช่องทางการชำระเงิน (Payment Channels)
-
-เพื่ออำนวยความสะดวกให้แก่คู่ค้าและลูกค้าทั่วไป ระบบรองรับ:
-
-ถุงเงิน, เป๋าตังเปย์, พร้อมเพย์
-
-การใช้คะแนนสะสม: AIS Points, My Point, Bangchak, Max Point, Global Club
-
-📞 ข้อมูลติดต่อ (Contact Information)
-
-หากต้องการข้อมูลเพิ่มเติมหรือความร่วมมือทางธุรกิจ:
-
-บริษัท: DALAYAR BICYCLE LIFESTYLE COMPANY
-
-ที่อยู่: 229 ถนนเกษตรพัฒนา ต.กุดเค้า อ.มัญจาคีรี จ.ขอนแก่น 40160
-
-โทรศัพท์: 043-289-526
-
-Line OA: @batterydaraya
-
-เว็บไซต์อย่างเป็นทางการ: Google Sites - Security & Information
-
-อัปเดตล่าสุด: 13 กุมภาพันธ์ 2026
+```json
 {
-  "project_info": {
-    "name": "darayar-powerpack-app",
-    "organization": "DALAYAR BICYCLE LIFESTYLE COMPANY",
-    "version": "1.1.0",
-    "last_updated": "2026-02-13"
-  },
-  "infrastructure": {
-    "cloud_provider": "Cloudflare",
-    "storage": {
-      "type": "R2 Object Storage",
-      "s3_api_endpoint": "8495bd97bd70a9bb9be1ea903f3ab66b.r2.cloudflarestorage.com",
-      "public_dev_url": "https://pub-9ba95f4e6bfb4adaa90b66c08887a631.r2.dev",
-      "warehouse_name": "8495bd97bd70a9bb9be1ea903f3ab66b_darayar",
-      "zone_id": "e003b4a518f37d9a037838b007a05efa"
-    }
-  },
-  "products": [
-    {
-      "id": "PP-DRY03",
-      "name": "ICR18650 Battery Power Pack",
-      "specifications": {
-        "nominal_voltage": "14.8V",
-        "configuration": "4S1P",
-        "capacity": "2000mAh",
-        "max_charge_current": "500mA (0.25C)",
-        "max_discharge_current": "1000mA (0.5C)",
-        "cycle_life": "500+ @25°C 1C",
-        "operating_temperature": {
-          "min": -40,
-          "max": 85,
-          "unit": "Celsius"
-        },
-        "self_discharge_rate": "≤3% per month"
-      },
-      "certifications": ["IEC", "CE", "MSDS"],
-      "applications": [
-        "Consumer Electronics",
-        "Portable Power Tools",
-        "Medical Devices",
-        "Robotics",
-        "Drones"
-      ],
-      "images": [
-        "https://pub-9ba95f4e6bfb4adaa90b66c08887a631.r2.dev/COA/BATTERY%20POWER%20PLACK/PP-DRY03/2026-02-12_1256184s1p.jpg",
-        "https://pub-9ba95f4e6bfb4adaa90b66c08887a631.r2.dev/COA/BATTERY%20POWER%20PLACK/PP-DRY03/2026-02-12_1256184s1p1.jpg",
-        "https://pub-9ba95f4e6bfb4adaa90b66c08887a631.r2.dev/COA/BATTERY%20POWER%20PLACK/PP-DRY03/2026-02-12_1256184s1p11.jpg",
-        "https://pub-9ba95f4e6bfb4adaa90b66c08887a631.r2.dev/COA/BATTERY%20POWER%20PLACK/PP-DRY03/2026-02-12_1256184s1p12.jpg",
-        "https://pub-9ba95f4e6bfb4adaa90b66c08887a631.r2.dev/COA/BATTERY%20POWER%20PLACK/PP-DRY03/2026-02-12_1256184s1p13.jpg"
-      ]
-    }
-  ],
-  "contact": {
-    "address": "229 ถนนเกษตรพัฒนา ต.กุดเค้า อ.มัญจาคีรี จ.ขอนแก่น 40160",
-    "phone": "043-289-526",
-    "line_oa": "@batterydaraya",
-    "website": "https://sites.google.com/view/batterydarayacom/security"
-  },
-  "payment_methods": [
-    "Thungngern",
-    "Paotang Pay",
-    "PromptPay",
-    "AIS Points",
-    "My Point",
-    "Bangchak",
-    "Max Point",
-    "Global Club"
-  ]
+    "CN": "example.com",
+    "names": [
+        {
+            "C":  "US",
+            "L":  "San Francisco",
+            "O":  "Internet Widgets, Inc.",
+            "OU": "WWW",
+            "ST": "California"
+        }
+    ]
 }
+```
+
+**N.B.** As of Go 1.7, self-signed certificates will not include
+[the AKI](https://go.googlesource.com/go/+/b623b71509b2d24df915d5bc68602e1c6edf38ca).
+
+#### Bundling
+
+```
+cfssl bundle [-ca-bundle bundle] [-int-bundle bundle] \
+             [-metadata metadata_file] [-flavor bundle_flavor] \
+             -cert certificate_file [-key key_file]
+```
+
+The bundles are used for the root and intermediate certificate
+pools. In addition, platform metadata is specified through `-metadata`.
+The bundle files, metadata file (and auxiliary files) can be
+found at:
+
+        https://github.com/cloudflare/cfssl_trust
+
+Specify PEM-encoded client certificate and key through `-cert` and
+`-key` respectively. If key is specified, the bundle will be built
+and verified with the key. Otherwise the bundle will be built
+without a private key. Instead of file path, use `-` for reading
+certificate PEM from stdin. It is also acceptable that the certificate
+file should contain a (partial) certificate bundle.
+
+Specify bundling flavor through `-flavor`. There are three flavors:
+`optimal` to generate a bundle of shortest chain and most advanced
+cryptographic algorithms, `ubiquitous` to generate a bundle of most
+widely acceptance across different browsers and OS platforms, and
+`force` to find an acceptable bundle which is identical to the
+content of the input certificate file.
+
+Alternatively, the client certificate can be pulled directly from
+a domain. It is also possible to connect to the remote address
+through `-ip`.
+
+```
+cfssl bundle [-ca-bundle bundle] [-int-bundle bundle] \
+             [-metadata metadata_file] [-flavor bundle_flavor] \
+             -domain domain_name [-ip ip_address]
+```
+
+The bundle output form should follow the example:
+
+```json
+{
+    "bundle": "CERT_BUNDLE_IN_PEM",
+    "crt": "LEAF_CERT_IN_PEM",
+    "crl_support": true,
+    "expires": "2015-12-31T23:59:59Z",
+    "hostnames": ["example.com"],
+    "issuer": "ISSUER CERT SUBJECT",
+    "key": "KEY_IN_PEM",
+    "key_size": 2048,
+    "key_type": "2048-bit RSA",
+    "ocsp": ["http://ocsp.example-ca.com"],
+    "ocsp_support": true,
+    "root": "ROOT_CA_CERT_IN_PEM",
+    "signature": "SHA1WithRSA",
+    "subject": "LEAF CERT SUBJECT",
+    "status": {
+        "rebundled": false,
+        "expiring_SKIs": [],
+        "untrusted_root_stores": [],
+        "messages": [],
+        "code": 0
+    }
+}
+```
+
+
+#### Generating certificate signing request and private key
+
+```
+cfssl genkey csr.json
+```
+
+To generate a private key and corresponding certificate request, specify
+the key request as a JSON file. This file should follow the form:
+
+```json
+{
+    "hosts": [
+        "example.com",
+        "www.example.com",
+        "https://www.example.com",
+        "jdoe@example.com",
+        "127.0.0.1"
+    ],
+    "key": {
+        "algo": "rsa",
+        "size": 2048
+    },
+    "names": [
+        {
+            "C":  "US",
+            "L":  "San Francisco",
+            "O":  "Internet Widgets, Inc.",
+            "OU": "WWW",
+            "ST": "California"
+        }
+    ]
+}
+```
+
+#### Generating self-signed root CA certificate and private key
+
+```
+cfssl genkey -initca csr.json | cfssljson -bare ca
+```
+
+To generate a self-signed root CA certificate, specify the key request as
+a JSON file in the same format as in 'genkey'. Three PEM-encoded entities
+will appear in the output: the private key, the csr, and the self-signed
+certificate.
+
+#### Generating a remote-issued certificate and private key.
+
+```
+cfssl gencert -remote=remote_server [-hostname=comma,separated,hostnames] csr.json
+```
+
+This calls `genkey` but has a remote CFSSL server sign and issue
+the certificate. You may use `-hostname` to override certificate SANs.
+
+#### Generating a local-issued certificate and private key.
+
+```
+cfssl gencert -ca cert -ca-key key [-hostname=comma,separated,hostnames] csr.json
+```
+
+This generates and issues a certificate and private key from a local CA
+via a JSON request. You may use `-hostname` to override certificate SANs.
+
+
+#### Updating an OCSP responses file with a newly issued certificate
+
+```
+cfssl ocspsign -ca cert -responder key -responder-key key -cert cert \
+ | cfssljson -bare -stdout >> responses
+```
+
+This will generate an OCSP response for the `cert` and add it to the
+`responses` file. You can then pass `responses` to `ocspserve` to start an
+OCSP server.
+
+### Starting the API Server
+
+CFSSL comes with an HTTP-based API server; the endpoints are
+documented in [`doc/api/intro.txt`](doc/api/intro.txt). The server is started with the `serve`
+command:
+
+```
+cfssl serve [-address address] [-ca cert] [-ca-bundle bundle] \
+            [-ca-key key] [-int-bundle bundle] [-int-dir dir] [-port port] \
+            [-metadata file] [-remote remote_host] [-config config] \
+            [-responder cert] [-responder-key key] [-db-config db-config]
+```
+
+Address and port default to "127.0.0.1:8888". The `-ca` and `-ca-key`
+arguments should be the PEM-encoded certificate and private key to use
+for signing; by default, they are `ca.pem` and `ca_key.pem`. The
+`-ca-bundle` and `-int-bundle` should be the certificate bundles used
+for the root and intermediate certificate pools, respectively. These
+default to `ca-bundle.crt` and `int-bundle.crt` respectively. If the
+`-remote` option is specified, all signature operations will be forwarded
+to the remote CFSSL.
+
+`-int-dir` specifies an intermediates directory. `-metadata` is a file for
+root certificate presence. The content of the file is a json dictionary 
+(k,v) such that each key k is an SHA-1 digest of a root certificate while value v 
+is a list of key store filenames. `-config` specifies a path to a configuration
+file. `-responder` and  `-responder-key` are the certificate and the
+private key for the OCSP responder, respectively.
+
+The amount of logging can be controlled with the `-loglevel` option. This
+comes *after* the serve command:
+
+```
+cfssl serve -loglevel 2
+```
+
+The levels are:
+
+* 0 - DEBUG
+* 1 - INFO (this is the default level)
+* 2 - WARNING
+* 3 - ERROR
+* 4 - CRITICAL
+
+### The multirootca
+
+The `cfssl` program can act as an online certificate authority, but it
+only uses a single key. If multiple signing keys are needed, the
+`multirootca` program can be used. It only provides the `sign`,
+`authsign` and `info` endpoints. The documentation contains instructions
+for configuring and running the CA.
+
+### The mkbundle Utility
+
+`mkbundle` is used to build the root and intermediate bundles used in
+verifying certificates. It can be installed with
+
+```
+go get github.com/cloudflare/cfssl/cmd/mkbundle
+```
+
+It takes a collection of certificates, checks for CRL revocation (OCSP
+support is planned for the next release) and expired certificates, and
+bundles them into one file. It takes directories of certificates and
+certificate files (which may contain multiple certificates). For example,
+if the directory `intermediates` contains a number of intermediate
+certificates:
+
+```
+mkbundle -f int-bundle.crt intermediates
+```
+
+will check those certificates and combine valid certificates into a single
+`int-bundle.crt` file.
+
+The `-f` flag specifies an output name; `-loglevel` specifies the verbosity
+of the logging (using the same loglevels as above), and `-nw` controls the
+number of revocation-checking workers.
+
+### The cfssljson Utility
+
+Most of the output from `cfssl` is in JSON. The `cfssljson` utility can take
+this output and split it out into separate `key`, `certificate`, `CSR`, and
+`bundle` files as appropriate. The tool takes a single flag, `-f`, that
+specifies the input file, and an argument that specifies the base name for
+the files produced. If the input filename is `-` (which is the default),
+cfssljson reads from standard input. It maps keys in the JSON file to
+filenames in the following way:
+
+* if __cert__ or __certificate__ is specified,         __basename.pem__          will be produced.
+* if __key__  or __private_key__ is specified,         __basename-key.pem__      will be produced.
+* if __csr__  or __certificate_request__ is specified, __basename.csr__          will be produced.
+* if __bundle__       is specified,                    __basename-bundle.pem__   will be produced.
+* if __ocspResponse__ is specified,                    __basename-response.der__ will be produced.
+
+Instead of saving to a file, you can pass `-stdout` to output the encoded
+contents to standard output.
+
+### Static Builds
+
+By default, the web assets are accessed from disk, based on their
+relative locations. If you wish to distribute a single,
+statically-linked, `cfssl` binary, you’ll want to embed these resources
+before building. This can by done with the
+[go.rice](https://github.com/GeertJohan/go.rice) tool.
+
+```
+pushd cli/serve && rice embed-go && popd
+```
+
+Then building with `go build` will use the embedded resources.
+
+### Additional Documentation
+
+Additional documentation can be found in the "doc" directory:
+
+* [doc/api/intro.txt](doc/api/intro.txt): documents the API endpoints
