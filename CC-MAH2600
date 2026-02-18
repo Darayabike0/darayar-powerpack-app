@@ -1,0 +1,208 @@
+CC-MAH2600	แบตเตอรี่ ICR18650 2.5AH	หมวดหมู่ 3	88	20	มีสินค้าพร้อมจำหน่าย	https://pub-9ba95f4e6bfb4adaa90b66c08887a631.r2.dev/ExportBlock/%E0%B9%81%E0%B8%9A%E0%B8%95%E0%B9%80%E0%B8%95%E0%B8%AD%E0%B8%A3%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%8B%E0%B8%A5%E0%B8%A5%E0%B9%8C18650/ICR18650-26a/18650%20Battery%202600mah.html																			
+https://github.com/Darayabike0/darayar-powerpack-app/issues/4#issuecomment-3921600946
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18650 Battery Specifications</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Prompt:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Inter', 'Prompt', sans-serif;
+            background-color: #f8fafc;
+        }
+
+        .battery-card {
+            background: linear-gradient(145deg, #ffffff, #f1f5f9);
+            box-shadow: 20px 20px 60px #d1d5db, -20px -20px 60px #ffffff;
+        }
+
+        .status-badge {
+            background: #e2e8f0;
+            color: #475569;
+            padding: 2px 10px;
+            border-radius: 99px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .warning-glow {
+            animation: pulse-red 2s infinite;
+        }
+
+        @keyframes pulse-red {
+            0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="max-w-4xl mx-auto">
+        <!-- Header Section -->
+        <header class="mb-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div>
+                <h1 class="text-3xl font-bold text-slate-800">แบตเตอรี่ลิเธียมไอออน 18650</h1>
+                <p class="text-slate-500">High-Performance High-Drain Energy Cell</p>
+            </div>
+            <div class="flex gap-2">
+                <span class="status-badge">CE Certified</span>
+                <span class="status-badge">COA Available</span>
+                <span class="status-badge">QC Passed</span>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- Technical Specs Column -->
+            <div class="md:col-span-2 space-y-6">
+                <!-- Main Specs Grid -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                    <div class="battery-card p-4 rounded-2xl text-center">
+                        <p class="text-xs text-slate-400 uppercase tracking-wider">แรงดันไฟฟ้า</p>
+                        <p class="text-2xl font-bold text-blue-600">3.7V</p>
+                        <p class="text-xs text-slate-500">Nominal</p>
+                    </div>
+                    <div class="battery-card p-4 rounded-2xl text-center">
+                        <p class="text-xs text-slate-400 uppercase tracking-wider">ความจุ</p>
+                        <p class="text-2xl font-bold text-blue-600">2600mAh</p>
+                        <p class="text-xs text-slate-500">Capacity</p>
+                    </div>
+                    <div class="battery-card p-4 rounded-2xl text-center">
+                        <p class="text-xs text-slate-400 uppercase tracking-wider">อายุการใช้งาน</p>
+                        <p class="text-2xl font-bold text-blue-600">500+</p>
+                        <p class="text-xs text-slate-500">Cycles</p>
+                    </div>
+                </div>
+
+                <!-- Overview Section -->
+                <section class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <h2 class="text-xl font-semibold mb-3 flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                        </svg>
+                        ภาพรวมและข้อมูลจำเพาะ
+                    </h2>
+                    <p class="text-slate-600 leading-relaxed">
+                        ด้วยความจุ 2600mAh และอัตราการจ่ายกระแสต่อเนื่องสูงสุดถึง <span class="font-bold text-slate-800">36A</span> 
+                        แบตเตอรี่รุ่นนี้ถูกออกแบบมาเพื่อระบบที่ต้องการการจ่ายกระแสไฟสูงเป็นพิเศษ เช่น 
+                        <span class="text-blue-600">รถแข่งต้นแบบ EV (Electric Vehicle Prototypes)</span> ที่ประสิทธิภาพในการเร่งและการจ่ายไฟมีความสำคัญสูงสุด 
+                        โครงสร้างภายในมีความทนทานสูง ทำให้เป็นตัวเลือกที่ยอดเยี่ยมสำหรับวิศวกรและนักพัฒนาที่ต้องการความเสถียรภายใต้สภาวะการใช้งานหนัก
+                    </p>
+                </section>
+
+                <!-- Configuration 10S2P Section -->
+                <section class="bg-blue-50 p-6 rounded-2xl border border-blue-100">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-xl font-semibold text-blue-900 flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            การกำหนดค่าชุดแบตเตอรี่: 10S2P
+                        </h2>
+                        <span class="bg-blue-200 text-blue-700 px-3 py-1 rounded-full text-xs font-bold uppercase">Engineering Preview</span>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded-xl shadow-sm">
+                            <h3 class="text-sm font-semibold text-slate-500 mb-2">ข้อมูลทางเทคนิค (Pack Total)</h3>
+                            <ul class="space-y-2 text-slate-700">
+                                <li class="flex justify-between"><span>แรงดันไฟรวม (Nominal):</span> <span class="font-bold">37.0V</span></li>
+                                <li class="flex justify-between"><span>แรงดันไฟสูงสุด (Fully Charged):</span> <span class="font-bold">42.0V</span></li>
+                                <li class="flex justify-between"><span>ความจุรวม:</span> <span class="font-bold">5.2Ah (5200mAh)</span></li>
+                                <li class="flex justify-between text-blue-600 font-semibold"><span>พลังงานทั้งหมด:</span> <span>192.4 Wh</span></li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl shadow-sm">
+                            <h3 class="text-sm font-semibold text-slate-500 mb-2">ขีดจำกัดกระแส (Current Limits)</h3>
+                            <ul class="space-y-2 text-slate-700">
+                                <li class="flex justify-between"><span>จ่ายกระแสต่อเนื่องสูงสุด:</span> <span class="font-bold">72A</span></li>
+                                <li class="flex justify-between"><span>จำนวนเซลล์ทั้งหมด:</span> <span class="font-bold">20 เซลล์</span></li>
+                                <li class="flex justify-between text-amber-600 font-semibold"><span>การจัดเรียง:</span> <span>10 Series | 2 Parallel</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="mt-4 text-xs text-blue-500 italic">* คำนวณตามสเปกเซลล์เดี่ยว 3.7V 2600mAh 36A. การใช้งานจริงต้องพิจารณาความร้อนที่สะสมในชุดแพ็กด้วย</p>
+                </section>
+            </div>
+
+            <!-- Warning and Safety Column -->
+            <div class="space-y-6">
+                <!-- Safety Warning Card -->
+                <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-2xl warning-glow">
+                    <h2 class="text-red-700 font-bold text-lg flex items-center gap-2 mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 17c-.77 1.333.192 3 1.732 3z" />
+                        </svg>
+                        ข้อมูลด้านความปลอดภัย!
+                    </h2>
+                    <ul class="space-y-3 text-red-800 text-sm">
+                        <li class="flex items-start gap-2">
+                            <span class="mt-1">•</span>
+                            <span>ห้ามลัดวงจร บีบอัด หรือวางไว้ใกล้เปลวไฟเด็ดขาด</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="mt-1">•</span>
+                            <span>ควรใช้ร่วมกับ <span class="font-bold underline">BMS</span> ที่เหมาะสมเสมอ</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="mt-1">•</span>
+                            <span>ไม่แนะนำให้ใช้เป็นเซลล์อะไหล่ในอุปกรณ์ทั่วไป</span>
+                        </li>
+                        <li class="flex items-start gap-2 font-semibold">
+                            <span class="mt-1">•</span>
+                            <span>การประกอบชุดแบตเตอรี่ควรทำโดยผู้เชี่ยวชาญเท่านั้น</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Simulation Info -->
+                <div class="bg-slate-800 text-white p-6 rounded-2xl shadow-xl">
+                    <h3 class="font-semibold mb-2">สถานะเซลล์ปัจจุบัน</h3>
+                    <div class="w-full bg-slate-700 h-4 rounded-full overflow-hidden mb-2">
+                        <div id="battery-level" class="bg-green-500 h-full w-[85%] transition-all duration-1000"></div>
+                    </div>
+                    <div class="flex justify-between text-xs text-slate-400">
+                        <span>สถานะ: พร้อมใช้งาน</span>
+                        <span id="voltage-readout">3.92V (85%)</span>
+                    </div>
+                </div>
+
+                <!-- Contributor Info -->
+                <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 text-center">
+                    <p class="text-xs text-slate-400 mb-1">กำกับโดย</p>
+                    <p class="font-semibold text-slate-700 mb-2">darayar</p>
+                    <a href="https://github.com/Darayabike0/darayar-powerpack-app.git" target="_blank" class="inline-flex items-center gap-2 text-xs text-blue-500 hover:text-blue-700 transition-colors">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+                        GitHub Repository
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-12 pt-6 border-t border-slate-200 text-center text-slate-400 text-sm">
+            <p>© 2024 Engineering Data Sheet - 18650 High-Drain Cell</p>
+        </footer>
+    </div>
+
+    <script>
+        // Simple interactive element to simulate real-time voltage readout
+        window.onload = () => {
+            const voltageDisplay = document.getElementById('voltage-readout');
+            const batteryBar = document.getElementById('battery-level');
+            
+            setInterval(() => {
+                const randomFluc = (Math.random() * 0.02 - 0.01).toFixed(3);
+                const baseVoltage = 3.92;
+                const currentV = (parseFloat(baseVoltage) + parseFloat(randomFluc)).toFixed(2);
+                voltageDisplay.innerText = `${currentV}V (85%)`;
+            }, 3000);
+        };
+    </script>
+</body>
+</html>
