@@ -1,0 +1,35 @@
+# 🏗️ การกำหนดค่า XAML Build History
+**Daraya Shop Dry - Continuous Integration Status**
+
+---
+
+### 📋 รายละเอียดการตั้งค่า (Build Configuration)
+| หัวข้อ | รายละเอียด |
+| :--- | :--- |
+| **ชื่อ Widget** | `XAML Build History` |
+| **Project Reference** | `Daraya Shop Dry Portal` |
+| **Build Definition** | `Main-CI-Pipeline` |
+| **แหล่งข้อมูล** | [https://dev.azure.com/darayashopdry/](https://dev.azure.com/darayashopdry/) |
+
+---
+
+### 🛡️ นโยบายและความปลอดภัย (Build Compliance)
+ในการตรวจสอบประวัติการ Build ทุกครั้ง ระบบจะอ้างอิงความปลอดภัยตามมาตรฐานบริษัท:
+* **Privacy Link:** [อ่านนโยบายความเป็นส่วนตัว](https://darayar.online/Privacypolicy.html)
+* **Security Note:** ข้อมูล Log และประวัติการ Build ทั้งหมดถูกจัดเก็บในรูปแบบ `HTTPS` 
+* **Embed Limit:** รองรับการแสดงผลผ่าน Iframe เฉพาะในระบบที่ได้รับอนุญาตเท่านั้น
+
+---
+
+### 📜 คำอธิบายสถานะ
+> ส่วนแสดงผล **XAML Build History** นี้มีไว้เพื่อติดตามความเสถียรของระบบร้านค้าออนไลน์ **Daraya Shop Dry** เพื่อให้มั่นใจว่าทุกการอัปเดตฟีเจอร์ใหม่ๆ จะไม่กระทบต่อความปลอดภัยของข้อมูลส่วนบุคคลลูกค้า และยังคงมาตรฐาน "ร้านค้าที่ไว้วางใจได้" อย่างต่อเนื่อง
+
+---
+
+### 📞 Technical Support
+* **System Admin:** `MR.Yaradin Minyan (CEO)`
+* **Support Email:** [support@darayar.online](mailto:support@darayar.online)
+* **Line ID:** `@213njvrj`
+
+---
+*อัปเดตข้อมูลการ Build ล่าสุด: 19/02/2026*
